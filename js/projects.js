@@ -1,11 +1,11 @@
 /**
- * Rebuilt Editorial Project Showcase & Lightbox Engine
- * Abdul Waris — Selected Work Module
+ * Premium Web Developer Showcase & Gallery Lightbox Engine
+ * Abdul Waris — Selected Projects Module
  */
 
 const projectsData = [
   {
-    number: "01",
+    number: "01 / 05",
     id: "nexora",
     name: "Nexora",
     tagline: "SaaS Analytics Dashboard",
@@ -14,13 +14,12 @@ const projectsData = [
     technologies: ["HTML", "CSS", "JavaScript", "Chart.js", "LocalStorage"],
     url: "https://nexora-wariz777.vercel.app/",
     layout: "layout-left",
-    screenshots: [
-      { src: "projects/nexora/hero.png", caption: "Nexora SaaS Dashboard — Desktop Overview" },
-      { src: "projects/nexora/mobile.png", caption: "Nexora SaaS Dashboard — Mobile Responsive Layout" }
-    ]
+    bgClass: "nexora-bg",
+    screenshot: "projects/nexora/hero.png",
+    caption: "Nexora SaaS Dashboard — Desktop Overview"
   },
   {
-    number: "02",
+    number: "02 / 05",
     id: "velora",
     name: "Velora",
     tagline: "Personal Finance Manager",
@@ -29,13 +28,12 @@ const projectsData = [
     technologies: ["HTML", "CSS", "JavaScript", "Chart.js", "LocalStorage"],
     url: "https://velora-wariz777.vercel.app/",
     layout: "layout-right",
-    screenshots: [
-      { src: "projects/velora/hero.png", caption: "Velora Personal Finance — Desktop Dashboard" },
-      { src: "projects/velora/mobile.png", caption: "Velora Personal Finance — Mobile Transaction Logging" }
-    ]
+    bgClass: "velora-bg",
+    screenshot: "projects/velora/hero.png",
+    caption: "Velora Personal Finance — Desktop Dashboard"
   },
   {
-    number: "03",
+    number: "03 / 05",
     id: "lumora",
     name: "Lumora",
     tagline: "Premium Luxury E-Commerce",
@@ -44,13 +42,12 @@ const projectsData = [
     technologies: ["HTML", "CSS", "JavaScript", "Lucide Icons"],
     url: "https://lumora-tau-flax.vercel.app/",
     layout: "layout-left",
-    screenshots: [
-      { src: "projects/lumora/hero.png", caption: "Lumora E-Commerce — Desktop Editorial Homepage" },
-      { src: "projects/lumora/mobile.png", caption: "Lumora E-Commerce — Mobile Shop Catalog View" }
-    ]
+    bgClass: "lumora-bg",
+    screenshot: "projects/lumora/hero.png",
+    caption: "Lumora E-Commerce — Desktop Editorial Homepage"
   },
   {
-    number: "04",
+    number: "04 / 05",
     id: "haven",
     name: "Haven",
     tagline: "Architecture & Property Marketplace",
@@ -59,13 +56,12 @@ const projectsData = [
     technologies: ["HTML", "CSS", "JavaScript", "Responsive Design"],
     url: "https://haven-blush.vercel.app/",
     layout: "layout-center",
-    screenshots: [
-      { src: "projects/haven/hero.png", caption: "Haven Real Estate — Desktop Property Discover Grid" },
-      { src: "projects/haven/mobile.png", caption: "Haven Real Estate — Mobile Advisor Portfolios" }
-    ]
+    bgClass: "haven-bg",
+    screenshot: "projects/haven/hero.png",
+    caption: "Haven Real Estate — Desktop Property Discover Grid"
   },
   {
-    number: "05",
+    number: "05 / 05",
     id: "diyar",
     name: "Diyar",
     tagline: "Solid Timber Showroom",
@@ -74,15 +70,12 @@ const projectsData = [
     technologies: ["HTML", "CSS", "JavaScript", "React Core"],
     url: "https://diyar-q4xh.vercel.app/",
     layout: "layout-right",
-    screenshots: [
-      { src: "projects/diyar/hero.png", caption: "Diyar Furniture Showroom — Desktop Atelier Collection" },
-      { src: "projects/diyar/mobile.png", caption: "Diyar Furniture Showroom — Mobile Room Space Showcase" }
-    ]
+    bgClass: "diyar-bg",
+    screenshot: "projects/diyar/hero.png",
+    caption: "Diyar Furniture Showroom — Desktop Atelier Collection"
   }
 ];
 
-// Active state variables for Lightbox
-let activeGallery = [];
 let activeIndex = 0;
 
 function renderProjects(filterVal = 'all') {
@@ -93,78 +86,74 @@ function renderProjects(filterVal = 'all') {
     ? projectsData 
     : projectsData.filter(p => p.category === filterVal);
 
-  container.innerHTML = filtered.map(proj => `
-    <div class="project-fold ${proj.layout} reveal" id="project-${proj.id}">
-      
-      <!-- Large Screenshot Visual Frame -->
-      <div class="project-visual-wrapper" data-proj-id="${proj.id}">
-        <span class="hover-zoom-badge">View Gallery ↗</span>
-        <div class="screenshot-container">
-          <img src="${proj.screenshots[0].src}" alt="${proj.screenshots[0].caption}" class="main-screenshot" data-index="0">
-          <div class="mobile-screenshot-overlay">
-            <img src="${proj.screenshots[1].src}" alt="${proj.screenshots[1].caption}" class="mobile-screenshot" data-index="1">
+  container.innerHTML = filtered.map((proj, idx) => `
+    <div class="project-wrapper ${proj.bgClass} reveal" id="project-${proj.id}">
+      <div class="project-fold ${proj.layout}">
+        
+        <!-- Large Mockup Screenshot Visual -->
+        <div class="project-visual-wrapper" data-proj-id="${proj.id}" data-global-idx="${projectsData.indexOf(proj)}">
+          <div class="browser-mockup">
+            <div class="browser-header">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <div class="browser-address">localhost:3000/${proj.id}</div>
+            </div>
+            <img src="${proj.screenshot}" alt="${proj.caption}" class="browser-screenshot" loading="lazy">
+          </div>
+          <div class="hover-overlay-hint">
+            <span class="overlay-badge">
+              <i data-lucide="zoom-in" style="width: 14px; height: 14px;"></i> View Screenshot ↗
+            </span>
           </div>
         </div>
-      </div>
 
-      <!-- Project Metadata Column -->
-      <div class="project-info">
-        <span class="project-num">${proj.number} /</span>
-        <h3 class="project-title">${proj.name}</h3>
-        <span class="project-tagline">${proj.tagline}</span>
-        <p class="project-desc">${proj.description}</p>
-        
-        <div class="project-tech-tags">
-          ${proj.technologies.map(t => `<span class="tech-tag">${t}</span>`).join('')}
+        <!-- Project Info -->
+        <div class="project-info">
+          <span class="project-num">${proj.number}</span>
+          <span class="project-tagline">${proj.tagline}</span>
+          <h3 class="project-title">${proj.name}</h3>
+          <p class="project-desc">${proj.description}</p>
+          
+          <div class="project-tech-tags">
+            ${proj.technologies.map(t => `<span class="tech-tag">${t}</span>`).join('')}
+          </div>
+
+          <div class="project-links">
+            <a href="${proj.url}" target="_blank" rel="noopener noreferrer" class="visit-link link-underline">
+              View Live <span class="arrow">↗</span>
+            </a>
+          </div>
         </div>
 
-        <div class="project-links">
-          <a href="${proj.url}" target="_blank" rel="noopener noreferrer" class="visit-link link-underline">
-            Visit Live <span class="arrow">↗</span>
-          </a>
-        </div>
       </div>
-
     </div>
   `).join('');
 
-  // Re-hydrate reveal animations
+  // Re-run Lucide icons mapping inside the newly added DOM elements
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
+
+  // Hydrate scroll trigger observers
   setTimeout(() => {
     const revealElements = container.querySelectorAll('.reveal');
-    if (typeof revealObserver !== 'undefined') {
-      revealElements.forEach(el => revealObserver.observe(el));
+    if (window.revealObserver) {
+      revealElements.forEach(el => window.revealObserver.observe(el));
     } else {
       revealElements.forEach(el => el.classList.add('active'));
     }
   }, 50);
 
-  // Bind Lightbox triggers on screenshot clicks
   bindLightboxEvents();
 }
 
 function bindLightboxEvents() {
   const visualWrappers = document.querySelectorAll('.project-visual-wrapper');
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const lightboxCaption = document.getElementById('lightbox-caption');
-
   visualWrappers.forEach(wrapper => {
-    const projId = wrapper.getAttribute('data-proj-id');
-    const proj = projectsData.find(p => p.id === projId);
-    if (!proj) return;
-
-    // Listen to image clicks inside this visual wrapper
-    const images = wrapper.querySelectorAll('img');
-    images.forEach(img => {
-      img.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const clickedIndex = parseInt(img.getAttribute('data-index')) || 0;
-        
-        activeGallery = proj.screenshots;
-        activeIndex = clickedIndex;
-        
-        openLightbox();
-      });
+    wrapper.addEventListener('click', () => {
+      activeIndex = parseInt(wrapper.getAttribute('data-global-idx')) || 0;
+      openLightbox();
     });
   });
 }
@@ -176,7 +165,7 @@ function openLightbox() {
   updateLightboxContent();
   lightbox.classList.add('active');
   lightbox.setAttribute('aria-hidden', 'false');
-  document.body.style.overflow = 'hidden'; // Lock back scroll
+  document.body.style.overflow = 'hidden'; // Scroll lock
 }
 
 function closeLightbox() {
@@ -185,37 +174,35 @@ function closeLightbox() {
 
   lightbox.classList.remove('active');
   lightbox.setAttribute('aria-hidden', 'true');
-  document.body.style.overflow = ''; // Release scroll lock
+  document.body.style.overflow = ''; // Release lock
 }
 
 function updateLightboxContent() {
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxCaption = document.getElementById('lightbox-caption');
   
-  if (!lightboxImg || !lightboxCaption || activeGallery.length === 0) return;
+  if (!lightboxImg || !lightboxCaption) return;
 
-  const currentItem = activeGallery[activeIndex];
-  lightboxImg.src = currentItem.src;
+  const currentItem = projectsData[activeIndex];
+  lightboxImg.src = currentItem.screenshot;
   lightboxImg.alt = currentItem.caption;
-  lightboxCaption.textContent = currentItem.caption;
+  lightboxCaption.textContent = `${currentItem.name} — ${currentItem.tagline}`;
 }
 
 function navigateLightbox(direction) {
-  if (activeGallery.length === 0) return;
-  
   if (direction === 'next') {
-    activeIndex = (activeIndex + 1) % activeGallery.length;
+    activeIndex = (activeIndex + 1) % projectsData.length;
   } else {
-    activeIndex = (activeIndex - 1 + activeGallery.length) % activeGallery.length;
+    activeIndex = (activeIndex - 1 + projectsData.length) % projectsData.length;
   }
   updateLightboxContent();
 }
 
-// Global initialization
+// Initialization and triggers
 document.addEventListener('DOMContentLoaded', () => {
   renderProjects('all');
 
-  // Filter click handlers
+  // Filter handlers
   const filterBtns = document.querySelectorAll('.filter-btn');
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -242,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Keyboards controls (Escape, Left/Right arrows)
+  // Keyboard navigation
   document.addEventListener('keydown', (e) => {
     if (!lightbox || !lightbox.classList.contains('active')) return;
     

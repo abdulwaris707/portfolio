@@ -11,7 +11,7 @@
   .hero-container, 
   .works-container, 
   .about-container, 
-  .stack-container, 
+  .skills-container, 
   .resume-container, 
   .contact-container, 
   .footer-container {
@@ -19,19 +19,22 @@
   }
 }
 
-/* 2. Standard Desktop / Laptops (1280px to 1440px) */
+/* 2. Standard Laptops (1280px to 1440px) */
 @media screen and (max-width: 1440px) {
   .hero-headline {
-    font-size: 4rem;
+    font-size: 3.75rem;
+  }
+  .section-title {
+    font-size: 2.5rem;
   }
 }
 
 @media screen and (max-width: 1280px) {
   .hero-headline {
-    font-size: 3.5rem;
+    font-size: 3.25rem;
   }
   .section-title {
-    font-size: 3.25rem;
+    font-size: 2.25rem;
   }
 }
 
@@ -40,23 +43,26 @@
   .hero-container {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
+    text-align: center;
   }
   
   .hero-text-content {
     grid-column: span 12;
-    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   
-  .hero-collage {
-    grid-column: span 12;
-    height: 320px;
+  .hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
   }
   
-  .hero-stats {
+  .hero-visual {
     grid-column: span 12;
+    max-width: 480px;
+    margin: 0 auto;
+    height: 360px;
   }
 
   /* Projects grid stacking */
@@ -67,10 +73,13 @@
   .project-visual-wrapper, .project-info {
     grid-column: span 12 !important;
     grid-row: auto !important;
-    padding-left: 0 !important;
+  }
+  .project-fold.layout-center .project-visual-wrapper,
+  .project-fold.layout-center .project-info {
+    width: 100%;
   }
 
-  /* About and Stack stacking */
+  /* About and Skills stacking */
   .about-grid {
     grid-template-columns: 1fr;
     gap: var(--space-md);
@@ -79,23 +88,30 @@
     grid-column: span 12;
   }
   
-  .stack-layout {
+  .skills-grid {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
   }
-  .stack-category.core-tech, .stack-category.expanding-tech {
+  .skills-core-box, .skills-expanding-box {
     grid-column: span 12;
     border-left: none;
     padding-left: 0;
   }
 
   /* Resume Split stacking */
-  .resume-split {
-    grid-template-columns: 1fr;
-    gap: var(--space-lg);
+  .resume-banner-card {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--space-md);
+    gap: var(--space-md);
   }
-  .timeline-box, .resume-download-card {
-    grid-column: span 12;
+  .resume-actions {
+    justify-content: center;
+    width: 100%;
+  }
+  .resume-actions .btn {
+    width: 48%;
+    justify-content: center;
   }
 
   /* Contact panels stacking */
@@ -118,13 +134,6 @@
   /* Mobile Menu Toggles */
   .mobile-nav-toggle {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--border-color);
-    padding: 0.5rem 1rem;
-    border-radius: var(--radius-xs);
-    background-color: var(--surface-color);
-    z-index: 110;
   }
 
   .nav-menu {
@@ -138,9 +147,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    gap: var(--space-md);
+    gap: var(--space-sm);
     transform: translateY(-100%);
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 105;
   }
 
@@ -149,17 +158,23 @@
   }
 
   .nav-link {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     padding: 0.5rem 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-cta-btn {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 0.85rem;
+    font-size: 0.8125rem;
+    margin-top: var(--space-xs);
   }
 
   .hero-headline {
     font-size: 2.75rem;
-  }
-
-  .timeline-row {
-    grid-template-columns: 1fr;
-    gap: 0.25rem;
   }
 
   .footer-upper {
@@ -183,11 +198,11 @@
   }
 
   .section-title {
-    font-size: 2.25rem;
+    font-size: 2rem;
   }
 
   .contact-headline {
-    font-size: 2.25rem;
+    font-size: 2rem;
   }
 
   .hero-ctas {
@@ -200,27 +215,27 @@
     justify-content: center;
   }
 
-  /* Collage shifts for compact viewports */
-  .hero-collage {
-    height: 280px;
+  /* Mockup scaling for smaller viewports */
+  .hero-visual {
+    height: 300px;
   }
-  .collage-item.item-1 { width: 140px; }
-  .collage-item.item-2 { width: 150px; }
-  .collage-item.item-3 { width: 130px; }
+  .browser-body {
+    height: 180px;
+  }
+  .floating-tag {
+    font-size: 0.625rem;
+    padding: 4px 8px;
+  }
+  .tag-html { top: 10%; right: -2%; }
+  .tag-css { bottom: 15%; left: -4%; }
+  .tag-js { bottom: 5%; right: 2%; }
 
-  .hero-stats {
+  .expanding-tags-grid {
     grid-template-columns: 1fr;
-    gap: var(--space-sm);
   }
 
-  .project-links {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-xs);
-  }
-  .project-links .visit-link {
+  .resume-actions .btn {
     width: 100%;
-    padding: 0.5rem 0;
   }
 
   .form-row {
@@ -237,13 +252,13 @@
     text-align: center;
   }
   
-  /* Lightbox buttons resize for touch */
   .lightbox-close {
     top: 1rem;
     right: 1rem;
   }
   .lightbox-nav {
     padding: var(--space-sm);
+    font-size: 2rem;
   }
 }
 
@@ -252,9 +267,9 @@
     font-size: 2.125rem;
   }
   .section-title {
-    font-size: 2.125rem;
+    font-size: 1.875rem;
   }
   .contact-headline {
-    font-size: 2.125rem;
+    font-size: 1.875rem;
   }
 }

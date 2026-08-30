@@ -6,20 +6,20 @@
   
   <!-- SEO & Accessibility Headers -->
   <title>Abdul Waris — Web Developer</title>
-  <meta name="description" content="Abdul Waris is a Web Developer specializing in HTML, CSS, and JavaScript. View his portfolio of responsive, interactive deployed websites.">
+  <meta name="description" content="Abdul Waris is a Web Developer specializing in HTML, CSS, and JavaScript. View his portfolio of modern, responsive, and interactive deployed websites.">
   <meta name="keywords" content="Abdul Waris, Web Developer, Frontend Engineer, HTML, CSS, JavaScript, Portfolio, Pakistan">
   
-  <!-- Open Graph -->
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://abdulwaris.dev/">
   <meta property="og:title" content="Abdul Waris — Web Developer">
-  <meta property="og:description" content="I build clean, responsive, and interactive websites using HTML, CSS, and JavaScript.">
-  <meta property="og:image" content="assets/projects/lumora/hero.png">
+  <meta property="og:description" content="I build modern, responsive, and interactive websites using HTML, CSS, and JavaScript.">
+  <meta property="og:image" content="projects/lumora/hero.png">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts - Plus Jakarta Sans Only -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="css/style.css">
@@ -31,28 +31,29 @@
 </head>
 <body>
 
-  <!-- Clean Editorial Header -->
+  <!-- Sticky Navbar -->
   <header class="header">
     <div class="header-container">
       <a href="#home" class="logo">
-        <span class="logo-serif">Abdul Waris</span>
+        <span class="logo-bold">ABDUL WARIS</span>
       </a>
       
       <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span class="menu-text">Menu</span>
+        <span class="menu-icon"></span>
       </button>
 
       <nav class="nav-menu">
+        <a href="#home" class="nav-link">Home</a>
         <a href="#works" class="nav-link">Work</a>
         <a href="#about" class="nav-link">About</a>
-        <a href="#stack" class="nav-link">Stack</a>
+        <a href="#skills" class="nav-link">Skills</a>
         <a href="#resume" class="nav-link">Resume</a>
         <a href="#contact" class="nav-link">Contact</a>
+        <a href="#contact" class="nav-cta-btn">Let's Talk ↗</a>
       </nav>
     </div>
   </header>
 
-  <!-- Main Content Wrapper -->
   <main id="main-content">
 
     <!-- Hero Fold -->
@@ -60,16 +61,21 @@
       <div class="hero-container">
         
         <div class="hero-text-content">
-          <div class="hero-label-tag">
-            <span>Web Developer</span>
-            <span class="dot">•</span>
-            <span>HTML • CSS • JavaScript</span>
+          <!-- Availability Badge -->
+          <div class="availability-badge">
+            <span class="pulse-dot"></span>
+            <span>AVAILABLE FOR PROJECTS &amp; OPPORTUNITIES</span>
           </div>
 
           <h1 class="hero-headline">
-            I build clean, responsive and <br>
-            <span class="serif-italic">interactive</span> websites.
+            Hi, I'm Abdul Waris. <br>
+            <span class="text-gradient">I BUILD MODERN WEBSITES</span> <br>
+            THAT PEOPLE WANT TO USE.
           </h1>
+
+          <p class="hero-subtitle">
+            Web Developer focused on clean interfaces, responsive design and interactive web experiences. Sourced from real-world internship benchmarks.
+          </p>
 
           <div class="hero-ctas">
             <a href="#works" class="btn btn-primary">View My Work <span class="arrow">↓</span></a>
@@ -77,55 +83,73 @@
           </div>
         </div>
 
-        <!-- Overlapping Screenshots Collage Visual -->
-        <div class="hero-collage">
-          <div class="collage-container">
-            <div class="collage-item item-1">
-              <span class="collage-title">LUMORA LUXURY</span>
-              <img src="projects/lumora/hero.png" alt="Lumora Luxury homepage preview" class="collage-img">
+        <!-- Tech Browser Composition -->
+        <div class="hero-visual">
+          <div class="hero-gradient-backing"></div>
+          
+          <div class="browser-mockup">
+            <div class="browser-header">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <div class="browser-address">localhost:3000</div>
             </div>
-            <div class="collage-item item-2">
-              <span class="collage-title">HAVEN MARKETPLACE</span>
-              <img src="projects/haven/hero.png" alt="Haven Marketplace homepage preview" class="collage-img">
-            </div>
-            <div class="collage-item item-3">
-              <span class="collage-title">NEXORA SaaS</span>
-              <img src="projects/nexora/hero.png" alt="Nexora Dashboard preview" class="collage-img">
+            
+            <div class="browser-body">
+              <!-- Mini layout components inside mockup -->
+              <div class="mock-sidebar">
+                <div class="mock-logo"></div>
+                <div class="mock-item active"></div>
+                <div class="mock-item"></div>
+                <div class="mock-item"></div>
+              </div>
+              <div class="mock-main">
+                <div class="mock-nav"></div>
+                <div class="mock-grid">
+                  <div class="mock-card card-gradient">
+                    <span class="card-label">Core Specialization</span>
+                    <span class="card-title">HTML &amp; CSS</span>
+                  </div>
+                  <div class="mock-card">
+                    <span class="card-label">Logic Engine</span>
+                    <span class="card-title">JavaScript</span>
+                  </div>
+                </div>
+                <div class="mock-chart-container">
+                  <div class="chart-header"></div>
+                  <div class="chart-bars">
+                    <div class="bar" style="height: 60%;"></div>
+                    <div class="bar" style="height: 80%;"></div>
+                    <div class="bar" style="height: 45%;"></div>
+                    <div class="bar" style="height: 90%;"></div>
+                    <div class="bar" style="height: 70%;"></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Stats Counter -->
-        <div class="hero-stats">
-          <div class="stat-cell">
-            <span class="stat-num">5</span>
-            <span class="stat-label">Deployed Projects</span>
-          </div>
-          <div class="stat-cell">
-            <span class="stat-num">HTML5</span>
-            <span class="stat-label">Standards Focus</span>
-          </div>
-          <div class="stat-cell">
-            <span class="stat-num">NUML</span>
-            <span class="stat-label">Software Engineering Track</span>
-          </div>
+          <!-- Decorative Floating Tags -->
+          <span class="floating-tag tag-html">HTML5</span>
+          <span class="floating-tag tag-css">CSS3</span>
+          <span class="floating-tag tag-js">JS ES6</span>
         </div>
 
       </div>
     </section>
 
-    <!-- Selected Work Showcase -->
+    <!-- Selected Projects Section -->
     <section id="works" class="works section-padding">
       <div class="works-container">
         
-        <div class="works-header">
+        <div class="section-header">
           <div class="header-details">
-            <span class="section-tag">01 / Projects</span>
+            <span class="section-tag-colored">SELECTED PROJECTS</span>
             <h2 class="section-title">Selected Work</h2>
-            <p class="section-subtitle">A selection of websites and digital experiences I've designed and built.</p>
+            <p class="section-subtitle">Real websites and digital experiences I've designed and built.</p>
           </div>
 
-          <!-- Filters -->
+          <!-- Category Filters -->
           <div class="works-filter">
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="web">Web</button>
@@ -135,30 +159,38 @@
           </div>
         </div>
 
-        <!-- Target Container for Projects List -->
+        <!-- Target Container for Dynamic Project Showcase -->
         <div id="projects-list" class="projects-list">
-          <!-- Dynamic Project Folds Rendered via js/projects.js -->
+          <!-- Dynamic Project layouts rendered via js/projects.js -->
         </div>
 
       </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Me Section -->
     <section id="about" class="about section-padding">
       <div class="about-container">
         
         <div class="about-grid">
           <div class="about-heading-col">
-            <span class="section-tag">02 / Profile</span>
-            <h2 class="section-title">About</h2>
-            <p class="serif-quote">Focusing on modern standards, accessibility, and clean interface structures.</p>
+            <span class="section-tag-colored">ABOUT ME</span>
+            <h2 class="section-title">I like building things that feel good to use.</h2>
+            <div class="about-metadata">
+              <span class="meta-tag">WEB DEVELOPMENT</span>
+              <span class="meta-tag">FRONTEND</span>
+              <span class="meta-tag">UI DEVELOPMENT</span>
+            </div>
           </div>
+          
           <div class="about-content-col">
-            <p>
-              I am a Front-End Developer and UI/UX Designer with hands-on internship experience building web applications using React.js and Next.js. I focus on translating designs into clean, responsive, and semantically structured code.
+            <p class="about-lead">
+              I'm Abdul Waris, a software engineering student and web developer focused on building responsive, interactive and visually polished digital experiences.
             </p>
             <p>
-              Currently completing my BS in Software Engineering at the National University of Modern Languages (NUML) in Rawalpindi, Pakistan, I structure my development process around clean HTML markup, organized CSS styling patterns, and robust vanilla JavaScript logic.
+              Currently studying for my BS in Software Engineering at the National University of Modern Languages (NUML) in Rawalpindi, Pakistan, I structure my code around web standards, clear structures, and fluid layouts.
+            </p>
+            <p>
+              My hands-on experience as a Front-End Development Intern at QA Sonic (SMC-Private) Limited equipped me with practical web application deployment workflows. I translate design specs into pixel-perfect vanilla HTML/CSS interfaces and orchestrate state logic with structured JavaScript modules.
             </p>
           </div>
         </div>
@@ -166,52 +198,92 @@
       </div>
     </section>
 
-    <!-- Core Stack Section ("What I Build With") -->
-    <section id="stack" class="stack section-padding">
-      <div class="stack-container">
+    <!-- Toolkit (Skills) Section -->
+    <section id="skills" class="skills section-padding">
+      <div class="skills-container">
         
-        <div class="stack-header">
-          <span class="section-tag">03 / Technologies</span>
+        <div class="section-header center">
+          <span class="section-tag-colored">MY TOOLKIT</span>
           <h2 class="section-title">What I Build With</h2>
-          <p class="section-subtitle">Sourced directly from academic projects and verified qualifications.</p>
+          <p class="section-subtitle">Sourced from academic achievements and professional internship practices.</p>
         </div>
 
-        <div class="stack-layout">
+        <div class="skills-grid">
           
-          <!-- Core Stack (Prominent) -->
-          <div class="stack-category core-tech">
-            <h3 class="stack-category-title">Core Stack</h3>
+          <!-- Core Stack (Visual Prominence) -->
+          <div class="skills-core-box">
+            <h3 class="skills-heading">Core Web Development</h3>
             
-            <div class="tech-row">
-              <span class="tech-name">HTML</span>
-              <p class="tech-desc">Semantic structure, accessible markup patterns, SEO best practices, and clean page layouts.</p>
-            </div>
-            
-            <div class="tech-row">
-              <span class="tech-name">CSS</span>
-              <p class="tech-desc">Responsive fluid designs, modern CSS grids, flexbox alignments, variables, and refined transitions.</p>
+            <div class="core-skill-card">
+              <div class="skill-icon-wrap html-color">
+                <i data-lucide="file-code"></i>
+              </div>
+              <div class="skill-details">
+                <h4 class="skill-title">HTML</h4>
+                <p class="skill-desc">Semantic page structures, DOM hierarchy configurations, SEO integrations, and strict accessible patterns.</p>
+              </div>
             </div>
 
-            <div class="tech-row">
-              <span class="tech-name">JavaScript</span>
-              <p class="tech-desc">DOM manipulation, event handling pipelines, state flow logic, and interactive modules.</p>
+            <div class="core-skill-card">
+              <div class="skill-icon-wrap css-color">
+                <i data-lucide="palette"></i>
+              </div>
+              <div class="skill-details">
+                <h4 class="skill-title">CSS</h4>
+                <p class="skill-desc">Responsive layouts, modern CSS grid structures, flexbox alignments, variable systems, and interactive animations.</p>
+              </div>
             </div>
+
+            <div class="core-skill-card">
+              <div class="skill-icon-wrap js-color">
+                <i data-lucide="terminal"></i>
+              </div>
+              <div class="skill-details">
+                <h4 class="skill-title">JavaScript</h4>
+                <p class="skill-desc">Dynamic DOM manipulations, transaction algorithms, data mappings, modular architectures, and event cycles.</p>
+              </div>
+            </div>
+
           </div>
 
           <!-- Expanding Stack -->
-          <div class="stack-category expanding-tech">
-            <h3 class="stack-category-title">Expanding Stack</h3>
-            <p class="expanding-subtitle">Currently exploring and developing projects with:</p>
+          <div class="skills-expanding-box">
+            <h3 class="skills-heading">Expanding My Stack</h3>
+            <p class="expanding-desc">Currently exploring, developing projects, and extending my engineering stack with:</p>
             
-            <div class="expanding-grid">
-              <span>React.js</span>
-              <span>Next.js</span>
-              <span>TypeScript</span>
-              <span>Node.js</span>
-              <span>Express.js</span>
-              <span>PostgreSQL</span>
-              <span>MySQL</span>
-              <span>React Native (Expo Go)</span>
+            <div class="expanding-tags-grid">
+              <div class="expanding-tag-card">
+                <i data-lucide="layers" class="tag-icon blue"></i>
+                <span>React.js</span>
+              </div>
+              <div class="expanding-tag-card">
+                <i data-lucide="external-link" class="tag-icon teal"></i>
+                <span>Next.js</span>
+              </div>
+              <div class="expanding-tag-card">
+                <i data-lucide="shield-check" class="tag-icon blue"></i>
+                <span>TypeScript</span>
+              </div>
+              <div class="expanding-tag-card">
+                <i data-lucide="cpu" class="tag-icon amber"></i>
+                <span>Node.js</span>
+              </div>
+              <div class="expanding-tag-card">
+                <i data-lucide="server" class="tag-icon teal"></i>
+                <span>Express.js</span>
+              </div>
+              <div class="expanding-tag-card">
+                <i data-lucide="database" class="tag-icon blue"></i>
+                <span>PostgreSQL</span>
+              </div>
+              <div class="expanding-tag-card">
+                <i data-lucide="database" class="tag-icon amber"></i>
+                <span>MySQL</span>
+              </div>
+              <div class="expanding-tag-card">
+                <i data-lucide="smartphone" class="tag-icon teal"></i>
+                <span>React Native</span>
+              </div>
             </div>
           </div>
 
@@ -220,103 +292,80 @@
       </div>
     </section>
 
-    <!-- Credentials & Resume Folder -->
+    <!-- Resume Section -->
     <section id="resume" class="resume section-padding">
       <div class="resume-container">
         
-        <div class="resume-split">
+        <div class="resume-banner-card">
+          <div class="resume-text">
+            <span class="section-tag-colored">RESUME PROFILE</span>
+            <h2 class="resume-headline">Want to know more about my experience?</h2>
+            <p class="resume-desc">View or download the official resume detailing my academic syllabus, internship history, and verified qualifications.</p>
+          </div>
           
-          <!-- Experience & Education timeline -->
-          <div class="timeline-box">
-            <span class="section-tag">04 / Background</span>
-            <h2 class="section-title">Experience &amp; Education</h2>
-            
-            <div class="timeline-items">
-              <div class="timeline-row">
-                <span class="row-date">Oct 2025 – Mar 2026</span>
-                <div class="row-details">
-                  <h4 class="row-title">Front-End Development Intern</h4>
-                  <span class="row-org">QA Sonic (SMC-Private) Limited</span>
-                  <p class="row-summary">Contributed to live web and software application development projects using HTML, CSS, JavaScript, React.js, and Next.js.</p>
-                </div>
-              </div>
-
-              <div class="timeline-row">
-                <span class="row-date">2023 – 2027</span>
-                <div class="row-details">
-                  <h4 class="row-title">BS in Software Engineering</h4>
-                  <span class="row-org">National University of Modern Languages (NUML)</span>
-                  <p class="row-summary">Academic foundations in software architectures, databases, and interface layout designs.</p>
-                </div>
-              </div>
-            </div>
+          <div class="resume-actions">
+            <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">
+              View Resume <span class="arrow">↗</span>
+            </a>
+            <a href="assets/resume.pdf" download="Abdul_Waris_Resume.pdf" class="btn btn-secondary btn-large">
+              Download Resume <span class="arrow">↓</span>
+            </a>
           </div>
-
-          <!-- Resume Downloads CTA -->
-          <div class="resume-download-card">
-            <h3 class="card-headline">Access Resume Credentials</h3>
-            <p class="card-desc">Download or view the official resume detailing complete academic records, skills, and projects.</p>
-            
-            <div class="card-buttons">
-              <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                View Resume <span class="arrow">↗</span>
-              </a>
-              <a href="assets/resume.pdf" download="Abdul_Waris_Resume.pdf" class="btn btn-secondary">
-                Download PDF <span class="arrow">↓</span>
-              </a>
-            </div>
-          </div>
-
         </div>
 
       </div>
     </section>
 
-    <!-- Contact Fold -->
+    <!-- Contact & Form Section -->
     <section id="contact" class="contact section-padding">
       <div class="contact-container">
         
         <div class="contact-grid">
           
-          <!-- Bold statement left -->
+          <!-- Direct Links -->
           <div class="contact-statement-panel">
-            <span class="section-tag">05 / Connect</span>
-            <h2 class="contact-headline">Let's work together.</h2>
-            <p class="contact-subheadline">Have a website, project, or opportunity? Get in touch.</p>
+            <span class="section-tag-colored">GET IN TOUCH</span>
+            <h2 class="contact-headline">Let's build something great.</h2>
+            <p class="contact-subheadline">Have a project, idea, or opportunity? Get in touch and let's coordinate.</p>
             
-            <div class="direct-anchors">
-              <a href="mailto:2003abdulwaris@gmail.com" class="channel-btn link-underline">
-                Send an Email <span class="arrow">↗</span>
+            <div class="contact-channels">
+              <a href="mailto:2003abdulwaris@gmail.com" class="channel-card">
+                <div class="channel-icon-wrap email-bg">
+                  <i data-lucide="mail"></i>
+                </div>
+                <div class="channel-info">
+                  <span class="channel-label">Email Me</span>
+                  <span class="channel-value">2003abdulwaris@gmail.com</span>
+                </div>
+                <span class="channel-arrow">↗</span>
               </a>
-              <a href="https://wa.me/923263104503?text=Hi%20Abdul%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project%20or%20opportunity." target="_blank" rel="noopener noreferrer" class="channel-btn link-underline">
-                Chat on WhatsApp <span class="arrow">↗</span>
-              </a>
-            </div>
 
-            <div class="contact-raw-fields">
-              <div class="raw-field">
-                <span class="field-label">Email</span>
-                <span class="field-value">2003abdulwaris@gmail.com</span>
-              </div>
-              <div class="raw-field">
-                <span class="field-label">WhatsApp</span>
-                <span class="field-value">+92 326 3104503</span>
-              </div>
+              <a href="https://wa.me/923263104503?text=Hi%20Abdul%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project%20or%20opportunity." target="_blank" rel="noopener noreferrer" class="channel-card">
+                <div class="channel-icon-wrap whatsapp-bg">
+                  <i data-lucide="message-square"></i>
+                </div>
+                <div class="channel-info">
+                  <span class="channel-label">Chat on WhatsApp</span>
+                  <span class="channel-value">+92 326 3104503</span>
+                </div>
+                <span class="channel-arrow">↗</span>
+              </a>
             </div>
           </div>
 
-          <!-- Contact Form right -->
+          <!-- Validated Form -->
           <div class="contact-form-panel">
             <form id="contact-form" class="editorial-form" novalidate>
+              <h3 class="form-title">Send a Message</h3>
               
               <div class="form-row">
                 <div class="form-item">
-                  <label for="form-name" class="item-label">Name</label>
-                  <input type="text" id="form-name" class="item-input" placeholder="Your Name" required>
+                  <label for="form-name" class="item-label">Your Name</label>
+                  <input type="text" id="form-name" class="item-input" placeholder="Name" required>
                   <span class="item-error" id="name-error">Please fill in your name.</span>
                 </div>
                 <div class="form-item">
-                  <label for="form-email" class="item-label">Email</label>
+                  <label for="form-email" class="item-label">Your Email</label>
                   <input type="email" id="form-email" class="item-input" placeholder="email@example.com" required>
                   <span class="item-error" id="email-error">Enter a valid email address.</span>
                 </div>
@@ -324,13 +373,13 @@
 
               <div class="form-item full-width">
                 <label for="form-subject" class="item-label">Subject</label>
-                <input type="text" id="form-subject" class="item-input" placeholder="Project specs or job inquiry" required>
+                <input type="text" id="form-subject" class="item-input" placeholder="Inquiry Subject" required>
                 <span class="item-error" id="subject-error">Please enter a subject.</span>
               </div>
 
               <div class="form-item full-width">
                 <label for="form-message" class="item-label">Message</label>
-                <textarea id="form-message" class="item-input item-textarea" rows="4" placeholder="Describe your web project requirements..." required></textarea>
+                <textarea id="form-message" class="item-input item-textarea" rows="4" placeholder="How can I help you build?" required></textarea>
                 <span class="item-error" id="message-error">Message must be at least 10 characters.</span>
               </div>
 
@@ -360,7 +409,7 @@
     <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next Image">&#10217;</button>
   </div>
 
-  <!-- Editorial Footer -->
+  <!-- Tech Footer -->
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-upper">
@@ -369,15 +418,18 @@
           <span class="footer-subtitle">Web Developer • HTML / CSS / JavaScript</span>
         </div>
         <div class="footer-navigation">
+          <a href="#home" class="foot-link">Home</a>
           <a href="#works" class="foot-link">Work</a>
           <a href="#about" class="foot-link">About</a>
+          <a href="#skills" class="foot-link">Skills</a>
+          <a href="#resume" class="foot-link">Resume</a>
           <a href="#contact" class="foot-link">Contact</a>
         </div>
       </div>
       
       <div class="footer-lower">
         <span class="footer-copy">&copy; 2026 Abdul Waris. All rights reserved.</span>
-        <a href="#home" class="footer-top-btn link-underline">Back to Top <span class="arrow">↑</span></a>
+        <a href="#home" class="footer-top-btn">Back to Top <span class="arrow">↑</span></a>
       </div>
     </div>
   </footer>

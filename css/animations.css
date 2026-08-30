@@ -2,11 +2,11 @@
    Abdul Waris — Rebuilt Motion & Keyframes Stylesheet
    ========================================================================== */
 
-/* Page Load Text Reveal */
-@keyframes editorialFadeUp {
+/* Page Load Animation reveals */
+@keyframes revealFadeUp {
   0% {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(30px);
   }
   100% {
     opacity: 1;
@@ -17,7 +17,7 @@
 @keyframes scaleUp {
   0% {
     opacity: 0;
-    transform: scale(0.95);
+    transform: scale(0.96);
   }
   100% {
     opacity: 1;
@@ -25,42 +25,60 @@
   }
 }
 
+/* Floating animation for tags in hero visual */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Bind floating tags */
+.tag-html {
+  animation: float 5s ease-in-out infinite;
+}
+.tag-css {
+  animation: float 6s ease-in-out infinite 0.5s;
+}
+.tag-js {
+  animation: float 5.5s ease-in-out infinite 1s;
+}
+
 /* Hero Entrances */
-.hero-label-tag {
+.availability-badge {
   opacity: 0;
-  animation: editorialFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: revealFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   animation-delay: 0.1s;
 }
 
 .hero-headline {
   opacity: 0;
-  animation: editorialFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  animation-delay: 0.25s;
+  animation: revealFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.2s;
+}
+
+.hero-subtitle {
+  opacity: 0;
+  animation: revealFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.3s;
 }
 
 .hero-ctas {
   opacity: 0;
-  animation: editorialFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: revealFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   animation-delay: 0.4s;
 }
 
-.hero-stats {
+.hero-visual {
   opacity: 0;
-  animation: editorialFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  animation-delay: 0.55s;
+  animation: scaleUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.25s;
 }
 
-.hero-collage {
-  opacity: 0;
-  animation: scaleUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  animation-delay: 0.35s;
-}
-
-/* Scroll Intersection Observer reveals */
+/* Scroll reveals */
 .reveal {
   opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(35px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
 }
 
@@ -69,47 +87,12 @@
   transform: translateY(0);
 }
 
-/* Stagger delay classes */
+/* Stagger reveals */
 .stagger-1 { transition-delay: 0.1s; }
 .stagger-2 { transition-delay: 0.2s; }
 .stagger-3 { transition-delay: 0.3s; }
 
-/* Visual scaling transition highlights */
-.main-screenshot {
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.mobile-screenshot-overlay {
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Capability Row border slide overs */
-.tech-row {
-  position: relative;
-  transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), padding-left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.tech-row::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 2px;
-  height: 100%;
-  background-color: var(--accent-color);
-  transform: scaleY(0);
-  transform-origin: bottom;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.tech-row:hover {
-  border-color: var(--text-color);
-  padding-left: var(--space-sm);
-}
-.tech-row:hover::after {
-  transform: scaleY(1);
-  transform-origin: top;
-}
-
-/* Accessibility reduced motion overrides */
+/* Reduced motion preference compliance */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -127,5 +110,9 @@
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
+  }
+  
+  .tag-html, .tag-css, .tag-js {
+    animation: none !important;
   }
 }

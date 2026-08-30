@@ -25,19 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. Full-Screen Drawer Menu Panel for Mobile
   const navToggle = document.querySelector('.mobile-nav-toggle');
   const navMenu = document.querySelector('.nav-menu');
-  const navLinks = document.querySelectorAll('.nav-link');
+  const menuLinks = document.querySelectorAll('.nav-menu a'); // Selects all link anchors including the CTA
 
   if (navToggle && navMenu) {
     const toggleMenu = (open) => {
       const isOpen = open !== undefined ? open : !navMenu.classList.contains('active');
       navMenu.classList.toggle('active', isOpen);
       navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      
-      // Update toggle icon text
-      const textSpan = navToggle.querySelector('.menu-text');
-      if (textSpan) {
-        textSpan.textContent = isOpen ? 'Close' : 'Menu';
-      }
       
       // Lock background scrolling when menu drawer is active
       document.body.style.overflow = isOpen ? 'hidden' : '';
@@ -48,8 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleMenu();
     });
 
-    // Dismiss panel on clicking links
-    navLinks.forEach(link => {
+    // Dismiss panel on clicking links or CTA button
+    menuLinks.forEach(link => {
       link.addEventListener('click', () => {
         toggleMenu(false);
       });
