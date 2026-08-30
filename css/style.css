@@ -352,7 +352,7 @@ a[href*="#works"]:hover .arrow {
 }
 
 .hero-headline {
-  font-size: 4.5rem;
+  font-size: clamp(2.25rem, 6.5vw, 4.5rem);
   line-height: 1.1;
   font-weight: 800;
   letter-spacing: -0.03em;
@@ -614,7 +614,7 @@ a[href*="#works"]:hover .arrow {
   margin-bottom: var(--space-xs);
 }
 .section-title {
-  font-size: 2.75rem;
+  font-size: clamp(1.85rem, 4.5vw, 2.75rem);
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.02em;
@@ -811,7 +811,7 @@ a[href*="#works"]:hover .arrow {
 }
 
 .project-title {
-  font-size: 2.25rem;
+  font-size: clamp(1.65rem, 3.8vw, 2.25rem);
   font-weight: 800;
   color: var(--primary-navy);
   letter-spacing: -0.02em;
@@ -1072,7 +1072,7 @@ a[href*="#works"]:hover .arrow {
 }
 
 .resume-headline {
-  font-size: 2.25rem;
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
   font-weight: 800;
   color: var(--primary-navy);
   line-height: 1.2;
@@ -1116,7 +1116,7 @@ a[href*="#works"]:hover .arrow {
 }
 
 .contact-headline {
-  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 800;
   color: var(--primary-navy);
   line-height: 1.2;

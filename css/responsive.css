@@ -2,43 +2,39 @@
    Abdul Waris — Rebuilt Responsive Media Stylesheet
    ========================================================================== */
 
+/* 0. Fluid Layout Containers Override (Applies to all viewports) */
+.header-container, 
+.hero-container, 
+.works-container, 
+.about-container, 
+.skills-container, 
+.resume-container, 
+.contact-container, 
+.footer-container {
+  width: min(100% - 2.5rem, 1400px) !important;
+  max-width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Base button & input touch targets safeguard */
+.btn {
+  min-height: 46px;
+}
+.item-input {
+  min-height: 44px;
+}
+
 /* 1. Large Displays (1920px and above) */
 @media screen and (min-width: 1920px) {
   html {
     font-size: 18px;
   }
-  .header-container, 
-  .hero-container, 
-  .works-container, 
-  .about-container, 
-  .skills-container, 
-  .resume-container, 
-  .contact-container, 
-  .footer-container {
-    max-width: 1600px;
-  }
 }
 
-/* 2. Standard Laptops (1280px to 1440px) */
-@media screen and (max-width: 1440px) {
-  .hero-headline {
-    font-size: 3.75rem;
-  }
-  .section-title {
-    font-size: 2.5rem;
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  .hero-headline {
-    font-size: 3.25rem;
-  }
-  .section-title {
-    font-size: 2.25rem;
-  }
-}
-
-/* 3. Small Laptops / Tablets (768px to 1024px) */
+/* 2. Small Laptops / Landscape Tablets (1024px and below) */
 @media screen and (max-width: 1024px) {
   .hero-container {
     grid-template-columns: 1fr;
@@ -61,8 +57,9 @@
   .hero-visual {
     grid-column: span 12;
     max-width: 480px;
+    width: 100%;
     margin: 0 auto;
-    height: 360px;
+    height: 350px;
   }
 
   /* Projects grid stacking */
@@ -98,7 +95,7 @@
     padding-left: 0;
   }
 
-  /* Resume Split stacking */
+  /* Resume banner alignment */
   .resume-banner-card {
     flex-direction: column;
     text-align: center;
@@ -110,7 +107,8 @@
     width: 100%;
   }
   .resume-actions .btn {
-    width: 48%;
+    flex: 1;
+    min-width: 200px;
     justify-content: center;
   }
 
@@ -124,11 +122,25 @@
   }
 }
 
-/* 4. Tablets & Portrait Displays (768px and below) */
+/* 3. Tablets & Portrait Displays (768px and below) */
 @media screen and (max-width: 768px) {
+  /* Reduce padding on mobile to let elements breathe without wasting height */
   .section-padding {
-    padding-top: var(--space-xl);
-    padding-bottom: var(--space-xl);
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+
+  .hero {
+    padding-top: 6.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+
+  .projects-list {
+    gap: 3rem !important;
+  }
+
+  .project-wrapper {
+    padding: 2rem 1rem !important;
   }
   
   /* Mobile Menu Toggles */
@@ -147,10 +159,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    gap: var(--space-sm);
+    gap: var(--space-xs);
     transform: translateY(-100%);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 105;
+    overflow-y: auto; /* Handles small landscape device heights */
   }
 
   .nav-menu.active {
@@ -159,7 +172,7 @@
 
   .nav-link {
     font-size: 1.125rem;
-    padding: 0.5rem 0;
+    padding: 0.6rem 0;
     width: 100%;
     text-align: center;
   }
@@ -173,8 +186,17 @@
     margin-top: var(--space-xs);
   }
 
-  .hero-headline {
-    font-size: 2.75rem;
+  /* Browser screenshot height fallback - no aggressive cropping */
+  .browser-screenshot {
+    height: auto !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+  }
+
+  /* Form row stacks on mobile/tablet for input width */
+  .form-row {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-md);
   }
 
   .footer-upper {
@@ -187,48 +209,28 @@
   }
 }
 
-/* 5. Mobile Portrait Screens (414px, 390px and below) */
-@media screen and (max-width: 414px) {
+/* 4. Compact Mobile Portrait Screens (480px and below) */
+@media screen and (max-width: 480px) {
   html {
-    font-size: 15px; /* Scales down UI base size */
+    font-size: 15px; /* Scales down base UI padding/metric defaults */
   }
 
-  .hero-headline {
-    font-size: 2.25rem;
-  }
-
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .contact-headline {
-    font-size: 2rem;
-  }
-
-  .hero-ctas {
-    flex-direction: column;
-    width: 100%;
-    gap: var(--space-xs);
-  }
-  .hero-ctas .btn {
-    width: 100%;
-    justify-content: center;
-  }
-
-  /* Mockup scaling for smaller viewports */
   .hero-visual {
-    height: 300px;
+    height: 280px;
   }
+  
   .browser-body {
-    height: 180px;
+    height: 170px;
   }
+
+  /* Constrain floating tags inside screen edges to prevent scrollWidth overflow */
   .floating-tag {
     font-size: 0.625rem;
     padding: 4px 8px;
   }
-  .tag-html { top: 10%; right: -2%; }
-  .tag-css { bottom: 15%; left: -4%; }
-  .tag-js { bottom: 5%; right: 2%; }
+  .tag-html { top: 8%; right: 2% !important; left: auto !important; }
+  .tag-css { bottom: 12%; left: 2% !important; right: auto !important; }
+  .tag-js { bottom: 4%; right: 4% !important; left: auto !important; }
 
   .expanding-tags-grid {
     grid-template-columns: 1fr;
@@ -236,10 +238,6 @@
 
   .resume-actions .btn {
     width: 100%;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
   }
 
   .contact-form-panel {
@@ -262,14 +260,15 @@
   }
 }
 
+/* 5. Small Mobile Viewports (390px, 375px, 320px and below) */
 @media screen and (max-width: 390px) {
-  .hero-headline {
-    font-size: 2.125rem;
+  .hero-ctas {
+    flex-direction: column;
+    width: 100%;
+    gap: var(--space-xs);
   }
-  .section-title {
-    font-size: 1.875rem;
-  }
-  .contact-headline {
-    font-size: 1.875rem;
+  .hero-ctas .btn {
+    width: 100%;
+    justify-content: center;
   }
 }

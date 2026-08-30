@@ -55,6 +55,13 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleMenu(false);
       }
     });
+
+    // Dismiss panel on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        toggleMenu(false);
+      }
+    });
   }
 
   // 4. Active Navigation Highlighting on Scroll (Intersection Observer)
