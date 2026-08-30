@@ -1,127 +1,97 @@
-# Premium Developer & UI/UX Product Portfolio
+# Abdul Waris — Professional Developer Portfolio
 
-A production-ready, highly interactive personal portfolio website showcasing multi-disciplinary engineering and visual design standards: **Software Engineering, Web Development, UI/UX Design, and Android Development**.
-
-The application is structured as a static Single Page Application (SPA) designed in **Obsidian Dark Theme** and includes custom interactive visual sandboxes (Playground Widgets) representing each area of expertise.
+A premium, modern, and minimal developer portfolio website built using **pure HTML5, CSS3, and Vanilla ES6+ JavaScript**. It features an elegant editorial design, subtle motion reveals, and custom CSS-based visual previews of real deployed projects.
 
 ---
 
-## 🚀 Technology Stack
+## 🎨 Design System
 
-- **Framework**: React 19 + TypeScript 6
-- **Build Tool**: Vite 8 (optimized client-side compilation)
-- **Styling**: Tailwind CSS v4 (PostCSS config adapters)
-- **Animations**: Framer Motion 13 (Restrained, hardware-accelerated transitions)
-- **Icons**: Lucide React 0.415.0
+- **Typography**: Editorial display serif (*Cormorant Garamond*) paired with a modern UI sans-serif (*Plus Jakarta Sans*).
+- **Color Palettes**:
+  - **Light Mode**: Sand background (`#F5F5F2`), charcoal text (`#161616`), and forest accent (`#4D6254`).
+  - **Dark Mode**: Obsidian olive background (`#151614`), warm cream text (`#F1F0EA`), and sage accent (`#91A394`).
+- **Icons**: Minimal vector iconography via Lucide Icons.
 
 ---
 
-## 🛠️ Environment Variables Configuration
+## 📂 Project Architecture
 
-This project is a client-side frontend SPA. To keep your information clean and modular, configure target email addresses or analytics identifiers through environment variables. 
-
-Create a `.env` file in the root workspace folder based on [`.env.example`](file:///.env.example):
-
-```bash
-# Destination email address for the client-side mailto fallback launcher
-VITE_CONTACT_EMAIL=contact@example.com
-
-# Optional backend endpoint base URL (if a proxy server or form receiver API is deployed)
-VITE_API_BASE_URL=https://api.yourdomain.com
-
-# Optional web analytics tracking ID (for public distribution traffic counts)
-VITE_ANALYTICS_ID=G-MOCKTRACKINGID
+```text
+portfolio/
+├── index.html
+├── css/
+│   ├── style.css
+│   ├── responsive.css
+│   └── animations.css
+├── js/
+│   ├── main.js
+│   ├── projects.js
+│   └── contact.js
+├── assets/
+│   ├── images/
+│   └── icons/
+└── README.md
 ```
 
-*Note: Environment variables in Vite must be prefixed with `VITE_` to be loaded into client-side code.*
+---
+
+## 🚀 Live Projects Highlighted
+
+The portfolio showcases **five real deployed products** built by Abdul Waris:
+
+1. **Nexora** ([https://nexora-wariz777.vercel.app/](https://nexora-wariz777.vercel.app/)): A SaaS Analytics Dashboard with interactive Chart.js graphs, dynamic filtering, CRUD controls, and a search command palette.
+2. **Velora** ([https://velora-wariz777.vercel.app/](https://velora-wariz777.vercel.app/)): A Personal Finance Manager tracking budgets, credit card utilization, transactions, and net worth calculations.
+3. **Lumora** ([https://lumora-tau-flax.vercel.app/](https://lumora-tau-flax.vercel.app/)): A premium quiet luxury fashion e-commerce shopping client.
+4. **Haven** ([https://haven-blush.vercel.app/](https://haven-blush.vercel.app/)): An architecture and property marketplace showcasing Pakistan's luxury residences.
+5. **Diyar** ([https://diyar-q4xh.vercel.app/](https://diyar-q4xh.vercel.app/)): An architectural timber showroom website presenting workspace and furniture collections.
 
 ---
 
-## 💻 Local Development
+## 💻 Running the Project Locally
 
-### Prerequisites
-- Node.js (version 18+ recommended)
-- npm or yarn
+No frameworks, compilation steps, or heavy loaders are required.
 
-### 1. Install Dependencies
+### Option 1: Direct File Access
+Simply double-click the `index.html` file at the root of the folder to open and run it directly in any modern web browser.
+
+### Option 2: Local Node Web Server (Vite)
+If you have Node.js installed, you can launch a hot-reloading development preview server:
 ```bash
+# 1. Install Vite helper (if node_modules isn't already set up)
 npm install
-```
 
-### 2. Run the Development Server
-```bash
+# 2. Start the local server
 npm run dev
 ```
-Open [http://localhost:5173](http://localhost:5173) in your browser to view the interactive widgets and animations.
+Navigate to the local address output (typically `http://localhost:5173`).
 
-### 3. Linting Code Quality
-Verify type interfaces, dependency trees, and syntax compliance using Oxlint:
+### Option 3: Python Web Server
+Alternatively, you can spin up a lightweight Python web server:
 ```bash
-npm run lint
+python -m http.server 8000
 ```
+Navigate to `http://localhost:8000` in your web browser.
 
 ---
 
-## 📦 Production Compiling
+## 🌐 Production Deployment
 
-Compile and minify assets into the static distribution bundle `dist/`:
+Since this portfolio is built with pure static files, it can be deployed on any modern hosting platform (such as **Vercel**, **Netlify**, or **GitHub Pages**) by uploading the root directory directly.
+
+### Deployment to Vercel (CLI)
+Ensure you are in the root directory:
 ```bash
-npm run build
+vercel
 ```
-
-This commands compiles and bundles resources:
-- JavaScript chunks are compiled, minified, and split.
-- CSS is optimized via PostCSS.
-- Visual vector items are bundled inline.
-- Output builds are served from the `dist/` directory.
-
-To test the compiled production build locally:
-```bash
-npm run preview
-```
-
----
-
-## 🌐 Deployment Guidelines
-
-This project compiles down to static HTML, CSS, and JS files, making it deployable on any modern static web host.
-
-### Option A: Vercel (Recommended)
-This repository is pre-configured for Vercel deployment.
-1. Install Vercel CLI or link your repository to the Vercel Dashboard.
-2. Ensure the framework preset is set to **Vite**.
-3. Set the build command to `npm run build` and output directory to `dist`.
-4. Configure environment variables (like `VITE_CONTACT_EMAIL`) in the Vercel Project settings.
-5. Deployment will pick up configuration details inside [`vercel.json`](file:///vercel.json).
-
-### Option B: Netlify
-1. Connect your repository to Netlify.
-2. Build Settings:
-   - **Build command**: `npm run build`
-   - **Publish directory**: `dist`
-3. Add Environment Variables inside the Netlify UI.
-4. Netlify will use [`public/_redirects`](file:///public/_redirects) to correctly route all SPA routes.
-
-### Option C: GitHub Pages
-1. Configure your repository for deployment via GitHub Actions.
-2. Create a workflow configuration using static upload steps pointing to the `dist` folder.
-3. If hosting on a subpath (e.g. `yourname.github.io/portfolio`), set the `base` configuration inside [`vite.config.ts`](file:///vite.config.ts) to `/portfolio/`.
+Vercel will detect it as a **Static Project** and deploy it instantly.
 
 ---
 
 ## 📋 Pre-Flight Production Checklist
 
-Before launching the project live, verify the following steps:
-
-1. **Environment Variables**:
-   - Check that `VITE_CONTACT_EMAIL` points to your actual business inbox.
-2. **Form Validation & Routing**:
-   - Fill out the Contact Form. Verify it triggers your native email client with pre-filled content.
-   - Enter `error@example.com` in the email input to confirm that the simulated database rollback error handles gracefully.
-3. **Responsive Breakpoints**:
-   - Audit the layout on mobile (320px, 375px, 430px) to verify that the Android phone emulator shrinks and the case-study buttons wrap nicely.
-4. **Touch & Accessibility Target Limits**:
-   - Check that active buttons and navigation items are easy to press on mobile devices.
-   - Confirm screen reader aids (`aria-labels`) are operational.
-5. **Production Bundle Verification**:
-   - Run `npm run build` to confirm compilation is clean and generates no TypeScript warnings or unused imports.
+Before publishing, verify the following steps:
+1. **Real Project Links**: Click each `Visit Live ↗` button to confirm they open the correct deployed URLs in new tabs.
+2. **Form Redirection**: Submit the contact form to confirm that input values are validated and launch a prefilled email client.
+3. **WhatsApp Link**: Click `WhatsApp Me ↗` to confirm it opens a conversation with international number `+923263104503` and a prefilled message.
+4. **Theme Caching**: Confirm that toggling dark/light theme persists across page refreshes using `LocalStorage`.
+5. **Reduced Motion**: Verify that animations do not run when `prefers-reduced-motion` is enabled in system accessibility properties.

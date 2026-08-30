@@ -1,0 +1,235 @@
+/* ==========================================================================
+   Responsive Stylesheet - Abdul Waris Portfolio
+   Targeting: 1920px, 1440px, 1280px, 1024px, 768px, 414px, 390px
+   ========================================================================== */
+
+/* 1. Large Displays (1920px and above) */
+@media screen and (min-width: 1920px) {
+  html {
+    font-size: 18px; /* Scales up visual size for huge screens */
+  }
+  .header-container, 
+  .hero-container, 
+  .works-container, 
+  .about-container, 
+  .stack-container, 
+  .contact-container, 
+  .footer-container {
+    max-width: 1600px;
+  }
+}
+
+/* 2. Standard Desktop / Laptops (1280px to 1440px) */
+@media screen and (max-width: 1440px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .hero-title {
+    font-size: 3.25rem;
+  }
+  .section-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* 3. Small Laptops / Tablets (768px to 1024px) */
+@media screen and (max-width: 1024px) {
+  /* Layout shifts from columns to vertical stacks */
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .hero-text-content {
+    grid-column: span 12;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-visual-frame {
+    grid-column: span 12;
+    max-width: 420px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .hero-metadata {
+    grid-column: span 12;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Projects layout stacking */
+  .project-card {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-md);
+  }
+  .project-visual-wrapper, .project-details {
+    grid-column: span 12 !important;
+    grid-row: auto !important;
+  }
+
+  /* About section stacking */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  .about-philosophy, .about-narrative {
+    grid-column: span 12;
+    max-width: 100%;
+  }
+
+  /* Stack grid layouts */
+  .stack-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: var(--space-md) 0;
+  }
+  .row-skills {
+    gap: 0.75rem;
+  }
+
+  /* Contact section layout */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  .contact-info, .contact-form-wrapper {
+    grid-column: span 12;
+  }
+}
+
+/* 4. Tablets & Mobile Portrait (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .section-padding {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+  }
+  
+  /* Mobile Menu Header Trigger */
+  .mobile-nav-toggle {
+    display: block;
+    z-index: 110;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100vh;
+    background-color: var(--surface-color);
+    border-left: 1px solid var(--border-color);
+    padding: 6rem var(--space-md) var(--space-md);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 105;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.05);
+  }
+  
+  .nav-menu.active {
+    transform: translateX(0);
+  }
+  
+  .nav-link {
+    font-size: 1rem;
+    width: 100%;
+    padding: var(--space-xs) 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .nav-link.resume-link {
+    border: none;
+    padding: var(--space-xs) 0;
+  }
+
+  /* Hero adjustments */
+  .hero-title {
+    font-size: 2.75rem;
+    line-height: 1.1;
+  }
+  .hero-br {
+    display: none;
+  }
+
+  /* Projects visuals */
+  .mock-browser-window {
+    aspect-ratio: 16 / 11;
+  }
+
+  /* Stack typography layout */
+  .row-category {
+    font-size: 1.25rem;
+  }
+}
+
+/* 5. Compact Mobile viewports (390px to 414px and below) */
+@media screen and (max-width: 414px) {
+  html {
+    font-size: 15px; /* Scales down body base slightly for micro screens */
+  }
+  
+  .hero-title {
+    font-size: 2.25rem;
+  }
+
+  .section-title {
+    font-size: 2.125rem;
+  }
+
+  .hero-ctas {
+    width: 100%;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+  .hero-ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Contact Button layout for mobile touch targets */
+  .contact-buttons {
+    width: 100%;
+  }
+  .contact-btn {
+    width: 100%;
+    min-width: 100%;
+    padding: 0.95rem; /* Larger touch layout */
+    font-size: 0.875rem;
+  }
+
+  /* Form spacing compressions */
+  .contact-form-wrapper {
+    padding: var(--space-md);
+  }
+  
+  .project-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+  }
+
+  .footer-meta {
+    flex-direction: column;
+    gap: var(--space-sm);
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .hero-title {
+    font-size: 2.125rem;
+  }
+  .visual-canvas {
+    max-width: 290px;
+    margin: 0 auto;
+  }
+}
