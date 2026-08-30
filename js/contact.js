@@ -1,6 +1,6 @@
 /**
- * Rebuilt Sanitized Contact Form Validation Module
- * Abdul Waris — Contact Controller
+ * Rebuilt Light-Theme Contact Form Controller
+ * Abdul Waris — Contact Validation
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -15,86 +15,85 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  // Simple HTML stripping sanitization to prevent XSS risk
-  const sanitizeHTML = (str) => {
+  // XSS protection
+  const sanitizeInput = (str) => {
     return str.replace(/<[^>]*>/g, '').trim();
   };
 
-  const clearValidationErrors = () => {
-    const cells = form.querySelectorAll('.form-cell');
-    cells.forEach(c => c.classList.remove('invalid'));
+  const clearErrors = () => {
+    const items = form.querySelectorAll('.form-item');
+    items.forEach(i => i.classList.remove('invalid'));
     feedbackEl.style.display = 'none';
     feedbackEl.className = 'form-feedback-overlay';
   };
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    clearValidationErrors();
+    clearErrors();
 
     let isValid = true;
 
-    // 1. Validate Name
-    const sanitizedName = sanitizeHTML(inputName.value);
-    if (!sanitizedName) {
+    // Validate Name
+    const nameVal = sanitizeInput(inputName.value);
+    if (!nameVal) {
       inputName.parentElement.classList.add('invalid');
       isValid = false;
     }
 
-    // 2. Validate Email
-    const sanitizedEmail = sanitizeHTML(inputEmail.value);
-    if (!sanitizedEmail || !emailRegex.test(sanitizedEmail)) {
+    // Validate Email
+    const emailVal = sanitizeInput(inputEmail.value);
+    if (!emailVal || !emailRegex.test(emailVal)) {
       inputEmail.parentElement.classList.add('invalid');
       isValid = false;
     }
 
-    // 3. Validate Subject
-    const sanitizedSubject = sanitizeHTML(inputSubject.value);
-    if (!sanitizedSubject) {
+    // Validate Subject
+    const subjectVal = sanitizeInput(inputSubject.value);
+    if (!subjectVal) {
       inputSubject.parentElement.classList.add('invalid');
       isValid = false;
     }
 
-    // 4. Validate Message (Min 10 characters)
-    const sanitizedMessage = sanitizeHTML(inputMessage.value);
-    if (!sanitizedMessage || sanitizedMessage.length < 10) {
+    // Validate Message
+    const messageVal = sanitizeInput(inputMessage.value);
+    if (!messageVal || messageVal.length < 10) {
       inputMessage.parentElement.classList.add('invalid');
       isValid = false;
     }
 
     if (!isValid) {
-      feedbackEl.textContent = "Please correct the errors in the fields highlighted in red.";
+      feedbackEl.textContent = "Please resolve the highlighted errors in the form.";
       feedbackEl.classList.add('error');
       feedbackEl.style.display = 'block';
       return;
     }
 
-    // Update Input values with sanitized versions
-    inputName.value = sanitizedName;
-    inputEmail.value = sanitizedEmail;
-    inputSubject.value = sanitizedSubject;
-    inputMessage.value = sanitizedMessage;
+    // Sanitize in-place
+    inputName.value = nameVal;
+    inputEmail.value = emailVal;
+    inputSubject.value = subjectVal;
+    inputMessage.value = messageVal;
 
-    // Show redirection feedback
-    feedbackEl.textContent = "Validation complete. Redirecting to your email client to compile mail...";
+    // Direct mailto compilation
+    feedbackEl.textContent = "Validation passed. Launching your default mail client to submit...";
     feedbackEl.classList.add('success');
     feedbackEl.style.display = 'block';
 
-    const destinationMail = '2003abdulwaris@gmail.com';
-    const emailSubject = encodeURIComponent(sanitizedSubject);
+    const destination = '2003abdulwaris@gmail.com';
+    const emailSubject = encodeURIComponent(subjectVal);
     const emailBody = encodeURIComponent(
-      `Hi Abdul,\n\nName: ${sanitizedName}\nEmail: ${sanitizedEmail}\n\nMessage:\n${sanitizedMessage}`
+      `Hi Abdul,\n\nName: ${nameVal}\nEmail: ${emailVal}\n\nMessage:\n${messageVal}`
     );
 
     setTimeout(() => {
-      // Trigger local mailto compilation
-      window.location.href = `mailto:${destinationMail}?subject=${emailSubject}&body=${emailBody}`;
+      window.location.href = `mailto:${destination}?subject=${emailSubject}&body=${emailBody}`;
       
       form.reset();
-      clearValidationErrors();
+      clearErrors();
     }, 1200);
   });
 
-  // Dynamic feedback clears on type
+  // Dynamic error removals
   inputName.addEventListener('input', () => {
     if (inputName.value.trim()) inputName.parentElement.classList.remove('invalid');
   });

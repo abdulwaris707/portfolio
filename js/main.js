@@ -1,36 +1,16 @@
 /**
- * Rebuilt Sticky Header, Theme, Mobile Navigation & Scroll Observer
+ * Rebuilt Header, Menu & Scroll Intersection Observers
  * Abdul Waris — UI/UX Coordinator
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   
-  // 1. Hydrate Lucide Icons
+  // 1. Initialize Lucide Icons
   if (typeof lucide !== 'undefined') {
     lucide.createIcons();
   }
 
-  // 2. Dark/Light Theme Persistence
-  const themeToggle = document.querySelector('.theme-toggle');
-  
-  const applyTheme = (themeName) => {
-    if (themeName === 'dark') {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('waris-theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('waris-theme', 'light');
-    }
-  };
-
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const isDark = document.documentElement.classList.contains('dark');
-      applyTheme(isDark ? 'light' : 'dark');
-    });
-  }
-
-  // 3. Compact Header Scroll Class Toggle
+  // 2. Compact Header Scroll Class Toggle
   const header = document.querySelector('.header');
   const scrollTracker = () => {
     if (window.scrollY > 50) {
@@ -40,9 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
   window.addEventListener('scroll', scrollTracker);
-  scrollTracker(); // Initial run on parse
+  scrollTracker(); // Initial run
 
-  // 4. Full-Screen Drawer Menu Panel for Mobile
+  // 3. Full-Screen Drawer Menu Panel for Mobile
   const navToggle = document.querySelector('.mobile-nav-toggle');
   const navMenu = document.querySelector('.nav-menu');
   const navLinks = document.querySelectorAll('.nav-link');
@@ -53,11 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
       navMenu.classList.toggle('active', isOpen);
       navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       
-      // Update toggle icon
-      const icon = navToggle.querySelector('i');
-      if (icon) {
-        icon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
-        if (typeof lucide !== 'undefined') lucide.createIcons();
+      // Update toggle icon text
+      const textSpan = navToggle.querySelector('.menu-text');
+      if (textSpan) {
+        textSpan.textContent = isOpen ? 'Close' : 'Menu';
       }
       
       // Lock background scrolling when menu drawer is active
@@ -84,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 5. Active Navigation Highlighting on Scroll (Intersection Observer)
+  // 4. Active Navigation Highlighting on Scroll (Intersection Observer)
   const sections = document.querySelectorAll('section[id]');
   const activeNavObserver = () => {
     if (sections.length === 0) return;
@@ -115,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   activeNavObserver();
 
-  // 6. Intersection Observer for Scroll Reveals
+  // 5. Scroll Reveals Intersection Observer
   const revealElements = document.querySelectorAll('.reveal');
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -136,6 +115,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }, revealObserverOptions);
 
     revealElements.forEach(el => revealObserver.observe(el));
+    
+    // Make reveal observer globally accessible for dynamically rendered elements
+    window.revealObserver = revealObserver;
   } else if (prefersReduced) {
     // Instantly activate reveals if user prefers reduced motion
     revealElements.forEach(el => el.classList.add('active'));

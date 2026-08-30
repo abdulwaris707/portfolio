@@ -5,53 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- SEO & Accessibility Headers -->
-  <title>Abdul Waris — Front-End Developer & UI/UX Designer</title>
-  <meta name="description" content="Abdul Waris is a Front-End Developer and UI/UX Designer building production-grade web applications. Sourced from Rawalpindi, Pakistan.">
-  <meta name="keywords" content="Abdul Waris, Front-End Developer, UI/UX Designer, Software Engineer, Portfolio, Pakistan, HTML, CSS, JavaScript, React, Next.js, Figma">
+  <title>Abdul Waris — Web Developer</title>
+  <meta name="description" content="Abdul Waris is a Web Developer specializing in HTML, CSS, and JavaScript. View his portfolio of responsive, interactive deployed websites.">
+  <meta name="keywords" content="Abdul Waris, Web Developer, Frontend Engineer, HTML, CSS, JavaScript, Portfolio, Pakistan">
   
-  <!-- OG / Social Cards -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://abdulwaris.dev/">
-  <meta property="og:title" content="Abdul Waris — Front-End Developer & UI/UX Designer">
-  <meta property="og:description" content="Front-end developer and UI/UX designer building clean, interactive digital products.">
-  <meta property="og:image" content="assets/images/og-share.jpg">
+  <meta property="og:title" content="Abdul Waris — Web Developer">
+  <meta property="og:description" content="I build clean, responsive, and interactive websites using HTML, CSS, and JavaScript.">
+  <meta property="og:image" content="assets/projects/lumora/hero.png">
 
-  <!-- Fonts -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- CSS Styles -->
+  <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/animations.css">
 
-  <!-- Blocking Theme Script -->
-  <script>
-    (function() {
-      const theme = localStorage.getItem('waris-theme') || 'dark';
-      if (theme === 'dark') {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    })();
-  </script>
-
-  <!-- Lucide Iconography -->
+  <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
-  <!-- Sticky Studio Header -->
+  <!-- Clean Editorial Header -->
   <header class="header">
     <div class="header-container">
       <a href="#home" class="logo">
-        <span class="logo-serif">A</span><span class="logo-sans">WARIS</span>
+        <span class="logo-serif">Abdul Waris</span>
       </a>
-
+      
       <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-        <i data-lucide="menu"></i>
+        <span class="menu-text">Menu</span>
       </button>
 
       <nav class="nav-menu">
@@ -61,70 +49,65 @@
         <a href="#resume" class="nav-link">Resume</a>
         <a href="#contact" class="nav-link">Contact</a>
       </nav>
-
-      <button class="theme-toggle" aria-label="Toggle theme mode">
-        <i data-lucide="sun" class="sun-icon"></i>
-        <i data-lucide="moon" class="moon-icon"></i>
-      </button>
     </div>
   </header>
 
-  <!-- Main Flow -->
+  <!-- Main Content Wrapper -->
   <main id="main-content">
 
-    <!-- Hero Fold: High Impact Typography -->
+    <!-- Hero Fold -->
     <section id="home" class="hero section-padding">
       <div class="hero-container">
         
         <div class="hero-text-content">
-          <div class="hero-subline">
-            <span class="location-tag">Rawalpindi, Pakistan</span>
-            <span class="divider">/</span>
-            <span class="role-tag">Front-End Developer &amp; UI/UX Designer</span>
+          <div class="hero-label-tag">
+            <span>Web Developer</span>
+            <span class="dot">•</span>
+            <span>HTML • CSS • JavaScript</span>
           </div>
 
           <h1 class="hero-headline">
-            I turn ideas into <br>
-            <span class="editorial-font">interactive</span> digital products.
+            I build clean, responsive and <br>
+            <span class="serif-italic">interactive</span> websites.
           </h1>
 
           <div class="hero-ctas">
-            <a href="#works" class="btn btn-primary">Explore Work <span class="arrow">↓</span></a>
-            <a href="#contact" class="btn btn-secondary">Get in Touch <span class="arrow">↗</span></a>
+            <a href="#works" class="btn btn-primary">View My Work <span class="arrow">↓</span></a>
+            <a href="#contact" class="btn btn-secondary">Contact Me <span class="arrow">↗</span></a>
           </div>
         </div>
 
-        <!-- Project Collage Visual -->
+        <!-- Overlapping Screenshots Collage Visual -->
         <div class="hero-collage">
           <div class="collage-container">
             <div class="collage-item item-1">
-              <span class="collage-label">LUMORA E-COMMERCE</span>
-              <div class="collage-mock"></div>
+              <span class="collage-title">LUMORA LUXURY</span>
+              <img src="projects/lumora/hero.png" alt="Lumora Luxury homepage preview" class="collage-img">
             </div>
             <div class="collage-item item-2">
-              <span class="collage-label">HAVEN REAL ESTATE</span>
-              <div class="collage-mock"></div>
+              <span class="collage-title">HAVEN MARKETPLACE</span>
+              <img src="projects/haven/hero.png" alt="Haven Marketplace homepage preview" class="collage-img">
             </div>
             <div class="collage-item item-3">
-              <span class="collage-label">NEXORA SaaS DASHBOARD</span>
-              <div class="collage-mock"></div>
+              <span class="collage-title">NEXORA SaaS</span>
+              <img src="projects/nexora/hero.png" alt="Nexora Dashboard preview" class="collage-img">
             </div>
           </div>
         </div>
 
-        <!-- Project-First Metrics -->
-        <div class="hero-metrics">
-          <div class="metric-block">
-            <span class="metric-num">05</span>
-            <span class="metric-label">Digital Projects Deployed</span>
+        <!-- Stats Counter -->
+        <div class="hero-stats">
+          <div class="stat-cell">
+            <span class="stat-num">5</span>
+            <span class="stat-label">Deployed Projects</span>
           </div>
-          <div class="metric-block">
-            <span class="metric-num">01</span>
-            <span class="metric-label">Industry Internship Completed</span>
+          <div class="stat-cell">
+            <span class="stat-num">HTML5</span>
+            <span class="stat-label">Standards Focus</span>
           </div>
-          <div class="metric-block">
-            <span class="metric-num">BS</span>
-            <span class="metric-label">Software Engineering Track</span>
+          <div class="stat-cell">
+            <span class="stat-num">NUML</span>
+            <span class="stat-label">Software Engineering Track</span>
           </div>
         </div>
 
@@ -136,53 +119,46 @@
       <div class="works-container">
         
         <div class="works-header">
-          <div class="header-desc">
-            <span class="section-tag">01 / Selected Work</span>
+          <div class="header-details">
+            <span class="section-tag">01 / Projects</span>
             <h2 class="section-title">Selected Work</h2>
-            <p class="section-subtitle">A collection of digital products I've designed and built.</p>
+            <p class="section-subtitle">A selection of websites and digital experiences I've designed and built.</p>
           </div>
-          
-          <!-- Category Filters -->
+
+          <!-- Filters -->
           <div class="works-filter">
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="web">Web</button>
             <button class="filter-btn" data-filter="e-commerce">E-Commerce</button>
             <button class="filter-btn" data-filter="dashboard">Dashboard</button>
             <button class="filter-btn" data-filter="real-estate">Real Estate</button>
-            <button class="filter-btn" data-filter="showroom">Showroom</button>
           </div>
         </div>
 
-        <!-- Dynamic Projects Container -->
-        <div id="projects-showcase" class="projects-showcase">
-          <!-- Populated dynamically via js/projects.js -->
+        <!-- Target Container for Projects List -->
+        <div id="projects-list" class="projects-list">
+          <!-- Dynamic Project Folds Rendered via js/projects.js -->
         </div>
 
       </div>
     </section>
 
-    <!-- About Fold -->
+    <!-- About Section -->
     <section id="about" class="about section-padding">
       <div class="about-container">
         
-        <div class="about-header">
-          <span class="section-tag">02 / Profile</span>
-          <h2 class="section-title">About</h2>
-          <p class="section-subtitle">I build digital experiences with code.</p>
-        </div>
-
         <div class="about-grid">
-          <div class="about-lead">
-            <h3 class="lead-quote">
-              Bridging visual clarity and engineering discipline.
-            </h3>
+          <div class="about-heading-col">
+            <span class="section-tag">02 / Profile</span>
+            <h2 class="section-title">About</h2>
+            <p class="serif-quote">Focusing on modern standards, accessibility, and clean interface structures.</p>
           </div>
-          <div class="about-narrative">
+          <div class="about-content-col">
             <p>
-              I am a Front-End Developer and UI/UX Designer with hands-on internship experience building production web applications using React.js and Next.js. I combine a strong design sensibility—wireframing, prototyping, and user-flow mapping in Figma—with the ability to translate those designs into clean, responsive, and standards-compliant code.
+              I am a Front-End Developer and UI/UX Designer with hands-on internship experience building web applications using React.js and Next.js. I focus on translating designs into clean, responsive, and semantically structured code.
             </p>
             <p>
-              Currently completing my BS in Software Engineering at the National University of Modern Languages (NUML), I have a verified track record of shipping front-end features across the entire planning, development, testing, and deployment lifecycle.
+              Currently completing my BS in Software Engineering at the National University of Modern Languages (NUML) in Rawalpindi, Pakistan, I structure my development process around clean HTML markup, organized CSS styling patterns, and robust vanilla JavaScript logic.
             </p>
           </div>
         </div>
@@ -190,180 +166,172 @@
       </div>
     </section>
 
-    <!-- Capabilities Stack Fold -->
+    <!-- Core Stack Section ("What I Build With") -->
     <section id="stack" class="stack section-padding">
       <div class="stack-container">
         
         <div class="stack-header">
-          <span class="section-tag">03 / Capabilities</span>
-          <h2 class="section-title">Skills &amp; Technologies</h2>
-          <p class="section-subtitle">Sourced directly from academic and professional qualifications.</p>
+          <span class="section-tag">03 / Technologies</span>
+          <h2 class="section-title">What I Build With</h2>
+          <p class="section-subtitle">Sourced directly from academic projects and verified qualifications.</p>
         </div>
 
-        <div class="stack-table">
+        <div class="stack-layout">
           
-          <div class="stack-row">
-            <span class="row-index">01</span>
-            <span class="row-cat">Front-End Development</span>
-            <div class="row-techs">
-              <span>HTML5</span>
-              <span>CSS3</span>
-              <span>JavaScript (ES6+)</span>
-              <span>React.js</span>
-              <span>Next.js</span>
+          <!-- Core Stack (Prominent) -->
+          <div class="stack-category core-tech">
+            <h3 class="stack-category-title">Core Stack</h3>
+            
+            <div class="tech-row">
+              <span class="tech-name">HTML</span>
+              <p class="tech-desc">Semantic structure, accessible markup patterns, SEO best practices, and clean page layouts.</p>
+            </div>
+            
+            <div class="tech-row">
+              <span class="tech-name">CSS</span>
+              <p class="tech-desc">Responsive fluid designs, modern CSS grids, flexbox alignments, variables, and refined transitions.</p>
+            </div>
+
+            <div class="tech-row">
+              <span class="tech-name">JavaScript</span>
+              <p class="tech-desc">DOM manipulation, event handling pipelines, state flow logic, and interactive modules.</p>
             </div>
           </div>
 
-          <div class="stack-row">
-            <span class="row-index">02</span>
-            <span class="row-cat">Mobile App Development</span>
-            <div class="row-techs">
+          <!-- Expanding Stack -->
+          <div class="stack-category expanding-tech">
+            <h3 class="stack-category-title">Expanding Stack</h3>
+            <p class="expanding-subtitle">Currently exploring and developing projects with:</p>
+            
+            <div class="expanding-grid">
+              <span>React.js</span>
+              <span>Next.js</span>
+              <span>TypeScript</span>
+              <span>Node.js</span>
+              <span>Express.js</span>
+              <span>PostgreSQL</span>
+              <span>MySQL</span>
               <span>React Native (Expo Go)</span>
             </div>
           </div>
 
-          <div class="stack-row">
-            <span class="row-index">03</span>
-            <span class="row-cat">UI/UX Design</span>
-            <div class="row-techs">
-              <span>Figma</span>
-              <span>Wireframing</span>
-              <span>Prototyping</span>
-              <span>User-Flow Mapping</span>
-            </div>
-          </div>
-
-          <div class="stack-row">
-            <span class="row-index">04</span>
-            <span class="row-cat">Database & SDLC</span>
-            <div class="row-techs">
-              <span>MySQL (Schema design, queries)</span>
-              <span>Full Software Lifecycle</span>
-            </div>
-          </div>
-
         </div>
 
       </div>
     </section>
 
-    <!-- Resume Fold -->
+    <!-- Credentials & Resume Folder -->
     <section id="resume" class="resume section-padding">
       <div class="resume-container">
         
-        <div class="resume-header">
-          <span class="section-tag">04 / Credentials</span>
-          <h2 class="section-title">Resume</h2>
-          <div class="resume-actions">
-            <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-              View Resume <span class="arrow">↗</span>
-            </a>
-            <a href="assets/resume.pdf" download="Abdul_Waris_Resume.pdf" class="btn btn-secondary">
-              Download PDF <span class="arrow">↓</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Styled Resume Visual Preview -->
-        <div class="resume-preview-box">
-          <div class="preview-page">
-            <div class="preview-header">
-              <span class="preview-name">ABDUL WARIS</span>
-              <span class="preview-title">Front-End Developer • UI/UX Designer</span>
-            </div>
+        <div class="resume-split">
+          
+          <!-- Experience & Education timeline -->
+          <div class="timeline-box">
+            <span class="section-tag">04 / Background</span>
+            <h2 class="section-title">Experience &amp; Education</h2>
             
-            <div class="preview-section">
-              <span class="section-lbl">Experience</span>
-              <div class="preview-item">
-                <div class="item-meta">
-                  <span class="item-title">Front-End Development Intern</span>
-                  <span class="item-company">QA Sonic (SMC-Private) Limited</span>
-                  <span class="item-date">Oct 2025 – Mar 2026</span>
+            <div class="timeline-items">
+              <div class="timeline-row">
+                <span class="row-date">Oct 2025 – Mar 2026</span>
+                <div class="row-details">
+                  <h4 class="row-title">Front-End Development Intern</h4>
+                  <span class="row-org">QA Sonic (SMC-Private) Limited</span>
+                  <p class="row-summary">Contributed to live web and software application development projects using HTML, CSS, JavaScript, React.js, and Next.js.</p>
                 </div>
-                <ul class="item-bullet-list">
-                  <li>Contributed to live web applications using HTML, CSS, JavaScript, React.js, and Next.js.</li>
-                  <li>Participated in full SDLC planning, testing, and deployment cycles alongside team engineers.</li>
-                </ul>
               </div>
-            </div>
 
-            <div class="preview-section">
-              <span class="section-lbl">Education</span>
-              <div class="preview-item">
-                <div class="item-meta">
-                  <span class="item-title">BS in Software Engineering</span>
-                  <span class="item-company">National University of Modern Languages (NUML)</span>
-                  <span class="item-date">2023 – 2027</span>
+              <div class="timeline-row">
+                <span class="row-date">2023 – 2027</span>
+                <div class="row-details">
+                  <h4 class="row-title">BS in Software Engineering</h4>
+                  <span class="row-org">National University of Modern Languages (NUML)</span>
+                  <p class="row-summary">Academic foundations in software architectures, databases, and interface layout designs.</p>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- Resume Downloads CTA -->
+          <div class="resume-download-card">
+            <h3 class="card-headline">Access Resume Credentials</h3>
+            <p class="card-desc">Download or view the official resume detailing complete academic records, skills, and projects.</p>
+            
+            <div class="card-buttons">
+              <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                View Resume <span class="arrow">↗</span>
+              </a>
+              <a href="assets/resume.pdf" download="Abdul_Waris_Resume.pdf" class="btn btn-secondary">
+                Download PDF <span class="arrow">↓</span>
+              </a>
+            </div>
+          </div>
+
         </div>
 
       </div>
     </section>
 
-    <!-- Contact Fold: Asymmetrical & Bold Statement -->
+    <!-- Contact Fold -->
     <section id="contact" class="contact section-padding">
       <div class="contact-container">
         
-        <div class="contact-asym-layout">
+        <div class="contact-grid">
           
-          <!-- Big Visual Statement -->
-          <div class="contact-statement">
+          <!-- Bold statement left -->
+          <div class="contact-statement-panel">
             <span class="section-tag">05 / Connect</span>
-            <h2 class="statement-headline">
-              Have an idea? <br>
-              Let's build something <span class="editorial-font">worth</span> visiting.
-            </h2>
+            <h2 class="contact-headline">Let's work together.</h2>
+            <p class="contact-subheadline">Have a website, project, or opportunity? Get in touch.</p>
             
-            <div class="direct-channels">
-              <a href="mailto:2003abdulwaris@gmail.com" class="channel-link link-underline">
+            <div class="direct-anchors">
+              <a href="mailto:2003abdulwaris@gmail.com" class="channel-btn link-underline">
                 Send an Email <span class="arrow">↗</span>
               </a>
-              <a href="https://wa.me/923263104503?text=Hi%20Abdul%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project%20or%20opportunity." target="_blank" rel="noopener noreferrer" class="channel-link link-underline">
+              <a href="https://wa.me/923263104503?text=Hi%20Abdul%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project%20or%20opportunity." target="_blank" rel="noopener noreferrer" class="channel-btn link-underline">
                 Chat on WhatsApp <span class="arrow">↗</span>
               </a>
             </div>
 
-            <div class="raw-data">
-              <div class="raw-item">
-                <span class="raw-lbl">Email</span>
-                <span class="raw-val">2003abdulwaris@gmail.com</span>
+            <div class="contact-raw-fields">
+              <div class="raw-field">
+                <span class="field-label">Email</span>
+                <span class="field-value">2003abdulwaris@gmail.com</span>
               </div>
-              <div class="raw-item">
-                <span class="raw-lbl">Phone</span>
-                <span class="raw-val">+92 326 3104503</span>
+              <div class="raw-field">
+                <span class="field-label">WhatsApp</span>
+                <span class="field-value">+92 326 3104503</span>
               </div>
             </div>
           </div>
 
-          <!-- Sanitize-Validated Contact Form -->
-          <div class="contact-form-card">
-            <form id="contact-form" class="studio-form" novalidate>
+          <!-- Contact Form right -->
+          <div class="contact-form-panel">
+            <form id="contact-form" class="editorial-form" novalidate>
+              
               <div class="form-row">
-                <div class="form-cell">
-                  <label for="form-name" class="cell-label">Your Name</label>
-                  <input type="text" id="form-name" class="cell-input" placeholder="Waris" required>
-                  <span class="cell-error" id="name-error">Name is required.</span>
+                <div class="form-item">
+                  <label for="form-name" class="item-label">Name</label>
+                  <input type="text" id="form-name" class="item-input" placeholder="Your Name" required>
+                  <span class="item-error" id="name-error">Please fill in your name.</span>
                 </div>
-                <div class="form-cell">
-                  <label for="form-email" class="cell-label">Your Email</label>
-                  <input type="email" id="form-email" class="cell-input" placeholder="waris@example.com" required>
-                  <span class="cell-error" id="email-error">Enter a valid email address.</span>
+                <div class="form-item">
+                  <label for="form-email" class="item-label">Email</label>
+                  <input type="email" id="form-email" class="item-input" placeholder="email@example.com" required>
+                  <span class="item-error" id="email-error">Enter a valid email address.</span>
                 </div>
               </div>
 
-              <div class="form-cell full-width">
-                <label for="form-subject" class="cell-label">Subject</label>
-                <input type="text" id="form-subject" class="cell-input" placeholder="Project collaboration details" required>
-                <span class="cell-error" id="subject-error">Subject is required.</span>
+              <div class="form-item full-width">
+                <label for="form-subject" class="item-label">Subject</label>
+                <input type="text" id="form-subject" class="item-input" placeholder="Project specs or job inquiry" required>
+                <span class="item-error" id="subject-error">Please enter a subject.</span>
               </div>
 
-              <div class="form-cell full-width">
-                <label for="form-message" class="cell-label">Message</label>
-                <textarea id="form-message" class="cell-input cell-textarea" rows="4" placeholder="Describe the scope of work or project specifications..." required></textarea>
-                <span class="cell-error" id="message-error">Message must be at least 10 characters long.</span>
+              <div class="form-item full-width">
+                <label for="form-message" class="item-label">Message</label>
+                <textarea id="form-message" class="item-input item-textarea" rows="4" placeholder="Describe your web project requirements..." required></textarea>
+                <span class="item-error" id="message-error">Message must be at least 10 characters.</span>
               </div>
 
               <div id="form-feedback-overlay" class="form-feedback-overlay"></div>
@@ -381,47 +349,40 @@
 
   </main>
 
-  <!-- Full-Screen slide-out Case Study Drawer Overlay -->
-  <div id="project-drawer" class="project-drawer" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="drawer-header-bar">
-      <span class="drawer-project-num" id="drawer-num">01 /</span>
-      <h3 class="drawer-project-title" id="drawer-title">PROJECT</h3>
-      <button class="drawer-close-btn" aria-label="Close Case Study drawer">
-        <i data-lucide="x"></i>
-      </button>
+  <!-- Interactive Lightbox Image Viewer Overlay -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Screenshot lightbox">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close Lightbox">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous Image">&#10216;</button>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="Enlarged project screenshot">
+      <div id="lightbox-caption" class="lightbox-caption"></div>
     </div>
-    
-    <div class="drawer-body">
-      <!-- Container for dynamic case study content -->
-      <div id="drawer-content-box"></div>
-    </div>
+    <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next Image">&#10217;</button>
   </div>
 
-  <!-- Minimal Fine-Border Footer -->
+  <!-- Editorial Footer -->
   <footer class="footer">
     <div class="footer-container">
-      <div class="footer-top">
-        <div class="footer-identity">
-          <span class="footer-logo">ABDUL WARIS</span>
-          <span class="footer-tagline">Front-End Developer &amp; UI/UX Designer</span>
+      <div class="footer-upper">
+        <div class="footer-brand-info">
+          <span class="footer-name">ABDUL WARIS</span>
+          <span class="footer-subtitle">Web Developer • HTML / CSS / JavaScript</span>
         </div>
-        <div class="footer-nav-links">
-          <a href="#works" class="f-link">Work</a>
-          <a href="#about" class="f-link">About</a>
-          <a href="#stack" class="f-link">Stack</a>
-          <a href="#resume" class="f-link">Resume</a>
-          <a href="#contact" class="f-link">Contact</a>
+        <div class="footer-navigation">
+          <a href="#works" class="foot-link">Work</a>
+          <a href="#about" class="foot-link">About</a>
+          <a href="#contact" class="foot-link">Contact</a>
         </div>
       </div>
       
-      <div class="footer-bottom">
-        <span class="footer-copyright">&copy; 2026 Abdul Waris. All rights reserved.</span>
-        <a href="#home" class="footer-back-top link-underline">Back to Top <span class="arrow">↑</span></a>
+      <div class="footer-lower">
+        <span class="footer-copy">&copy; 2026 Abdul Waris. All rights reserved.</span>
+        <a href="#home" class="footer-top-btn link-underline">Back to Top <span class="arrow">↑</span></a>
       </div>
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Core JavaScript Modules -->
   <script type="module" src="js/projects.js"></script>
   <script type="module" src="js/contact.js"></script>
   <script type="module" src="js/main.js"></script>

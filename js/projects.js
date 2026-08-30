@@ -1,202 +1,125 @@
 /**
- * Rebuilt Dynamic Projects Case Studies & Preview Engine
+ * Rebuilt Editorial Project Showcase & Lightbox Engine
  * Abdul Waris — Selected Work Module
  */
 
 const projectsData = [
   {
-    num: "01",
+    number: "01",
     id: "nexora",
-    title: "NEXORA",
-    subtitle: "SaaS Analytics Dashboard",
+    name: "Nexora",
+    tagline: "SaaS Analytics Dashboard",
     category: "dashboard",
-    desc: "A commercial-grade SaaS Analytics Dashboard web application designed with modern enterprise design guidelines. Features interactive monthly area and donut charts, client-side hash routing, dynamic range filters, and a global command search palette.",
-    tags: ["HTML5", "CSS3", "JavaScript", "Chart.js", "LocalStorage"],
-    liveUrl: "https://nexora-wariz777.vercel.app/",
+    description: "A commercial-grade SaaS Analytics Dashboard web application designed with modern enterprise guidelines. Features interactive monthly area and donut charts, client-side SPA routing, dynamic range filters, and a global command search palette.",
+    technologies: ["HTML", "CSS", "JavaScript", "Chart.js", "LocalStorage"],
+    url: "https://nexora-wariz777.vercel.app/",
     layout: "layout-left",
-    role: "Front-End Developer & UI/UX Designer",
-    features: [
-      "Interactive Chart.js visualizations (Monthly Area curve, category Revenue Donut, and acquisition sparklines).",
-      "SPA Client-Side Hash Router ensuring seamless view changes without full page refreshes.",
-      "Global Command Palette (Ctrl + K) overlay with keyboard navigation capabilities.",
-      "Product Catalog Management (CRUD + LocalStorage) modal forms validation.",
-      "Dynamic date range presets (Today, Last 7 days, Last 30 days) adjusting live data.",
-      "Obsidian dark mode toggle with theme memory retention."
-    ],
-    mockClass: "nexora-mock",
-    mockHtml: `
-      <div class="load-preview-overlay">
-        <span class="overlay-img-placeholder">📊</span>
-        <span class="overlay-tagline">Nexora SaaS Dashboard</span>
-        <button class="btn btn-primary load-iframe-btn" data-url="https://nexora-wariz777.vercel.app/">Load Live Preview</button>
-      </div>
-    `
+    screenshots: [
+      { src: "projects/nexora/hero.png", caption: "Nexora SaaS Dashboard — Desktop Overview" },
+      { src: "projects/nexora/mobile.png", caption: "Nexora SaaS Dashboard — Mobile Responsive Layout" }
+    ]
   },
   {
-    num: "02",
+    number: "02",
     id: "velora",
-    title: "VELORA",
-    subtitle: "Personal Finance Manager",
+    name: "Velora",
+    tagline: "Personal Finance Manager",
     category: "dashboard",
-    desc: "A comprehensive personal finance application designed for real-time transactions logging, budget tracking, credit card utilization meters, and currency configurations without database dependencies.",
-    tags: ["HTML5", "CSS3", "JavaScript", "Chart.js", "LocalStorage"],
-    liveUrl: "https://velora-wariz777.vercel.app/",
+    description: "A comprehensive personal finance application designed for real-time transactions logging, budget tracking, credit card utilization meters, and currency configurations.",
+    technologies: ["HTML", "CSS", "JavaScript", "Chart.js", "LocalStorage"],
+    url: "https://velora-wariz777.vercel.app/",
     layout: "layout-right",
-    role: "Front-End Developer & UI/UX Designer",
-    features: [
-      "Financial overview panel containing cash-flow graphs, savings rates, and expense distribution indices.",
-      "Complete transaction logs with live filters, date sorting, and database entry creations.",
-      "Interactive budget category controls with warning notifications at 80% and limit caps at 100%.",
-      "Savings target multi-goal tracker with quick contribute balance adjustment controls.",
-      "Credit limit utilization wheels calculating net worth formulas.",
-      "Multi-currency support (PKR, USD, GBP, EUR, AED) adapting system parameters."
-    ],
-    mockClass: "velora-mock",
-    mockHtml: `
-      <div class="load-preview-overlay">
-        <span class="overlay-img-placeholder">💳</span>
-        <span class="overlay-tagline">Velora Personal Finance</span>
-        <button class="btn btn-primary load-iframe-btn" data-url="https://velora-wariz777.vercel.app/">Load Live Preview</button>
-      </div>
-    `
+    screenshots: [
+      { src: "projects/velora/hero.png", caption: "Velora Personal Finance — Desktop Dashboard" },
+      { src: "projects/velora/mobile.png", caption: "Velora Personal Finance — Mobile Transaction Logging" }
+    ]
   },
   {
-    num: "03",
+    number: "03",
     id: "lumora",
-    title: "LUMORA",
-    subtitle: "Premium Luxury E-Commerce",
+    name: "Lumora",
+    tagline: "Premium Luxury E-Commerce",
     category: "e-commerce",
-    desc: "A luxury essentials e-commerce landing page and catalog platform. Focuses on premium quiet luxury design, clean typography scales, catalog search capabilities, and wishlist overlays.",
-    tags: ["HTML5", "CSS3", "JavaScript", "Lucide Icons", "Flexbox"],
-    liveUrl: "https://lumora-tau-flax.vercel.app/",
+    description: "A refined luxury essentials e-commerce landing page and catalog platform built around quiet luxury branding, product discovery filters, and checkout cart drawers.",
+    technologies: ["HTML", "CSS", "JavaScript", "Lucide Icons"],
+    url: "https://lumora-tau-flax.vercel.app/",
     layout: "layout-left",
-    role: "Front-End Developer & UI/UX Designer",
-    features: [
-      "Clean quiet luxury e-commerce catalog landing pages featuring cashmere and leather collections.",
-      "Custom catalog filters adjusting displays across Men, Women, Shoes, Bags, and Accessories.",
-      "Shopping bag drawer toggles with quantity and checkout overlays.",
-      "Wishlist overlays allowing users to save and view favorited articles.",
-      "Theme toggle integrations and flexible grids with fast load benchmarks."
-    ],
-    mockClass: "lumora-mock",
-    mockHtml: `
-      <div class="load-preview-overlay">
-        <span class="overlay-img-placeholder">👜</span>
-        <span class="overlay-tagline">Lumora Luxury E-Commerce</span>
-        <button class="btn btn-primary load-iframe-btn" data-url="https://lumora-tau-flax.vercel.app/">Load Live Preview</button>
-      </div>
-    `
+    screenshots: [
+      { src: "projects/lumora/hero.png", caption: "Lumora E-Commerce — Desktop Editorial Homepage" },
+      { src: "projects/lumora/mobile.png", caption: "Lumora E-Commerce — Mobile Shop Catalog View" }
+    ]
   },
   {
-    num: "04",
+    number: "04",
     id: "haven",
-    title: "HAVEN",
-    subtitle: "Architecture & Property Marketplace",
+    name: "Haven",
+    tagline: "Architecture & Property Marketplace",
     category: "real-estate",
-    desc: "A luxury real estate property marketplace focused on Pakistan's premier locations. Implements search capabilities, agent/advisor portfolios, and an elegant editorial editorial publication layout.",
-    tags: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
-    liveUrl: "https://haven-blush.vercel.app/",
+    description: "A luxury real-estate property search marketplace and architectural catalog connecting buyer inquiries with advisors, location exploration guides, and seller profiles.",
+    technologies: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+    url: "https://haven-blush.vercel.app/",
     layout: "layout-center",
-    role: "Front-End Developer & UI/UX Designer",
-    features: [
-      "Curated real estate listings catalog detailing location specifications and property properties.",
-      "Dynamic filtering search indexes matching buyers with locations.",
-      "Architectural journals and articles collection.",
-      "Advisors and agent matching dashboards.",
-      "Sell With Haven interactive process structures."
-    ],
-    mockClass: "haven-mock",
-    mockHtml: `
-      <div class="load-preview-overlay">
-        <span class="overlay-img-placeholder">🏡</span>
-        <span class="overlay-tagline">Haven Property Marketplace</span>
-        <button class="btn btn-primary load-iframe-btn" data-url="https://haven-blush.vercel.app/">Load Live Preview</button>
-      </div>
-    `
+    screenshots: [
+      { src: "projects/haven/hero.png", caption: "Haven Real Estate — Desktop Property Discover Grid" },
+      { src: "projects/haven/mobile.png", caption: "Haven Real Estate — Mobile Advisor Portfolios" }
+    ]
   },
   {
-    num: "05",
+    number: "05",
     id: "diyar",
-    title: "DIYAR",
-    subtitle: "Solid Timber Showroom",
-    category: "showroom",
-    desc: "A premium solid timber furniture showroom website displaying minimal workspace and living showrooms. Showcases visual gallery compositions, responsive grids, and design tokens.",
-    tags: ["HTML5", "CSS3", "JavaScript", "React Core"],
-    liveUrl: "https://diyar-q4xh.vercel.app/",
+    name: "Diyar",
+    tagline: "Solid Timber Showroom",
+    category: "web",
+    description: "A premium solid timber furniture atelier showroom website presenting workspace and furniture collections, material finishes, and workspace showrooms.",
+    technologies: ["HTML", "CSS", "JavaScript", "React Core"],
+    url: "https://diyar-q4xh.vercel.app/",
     layout: "layout-right",
-    role: "Front-End Developer & UI/UX Designer",
-    features: [
-      "High-end timber showroom showroom layout displaying furniture collections.",
-      "Space classifications sorting items by Living, Dining, and Workspace layouts.",
-      "Material specifications cards calling out wood grain details and finishes.",
-      "Flexible asymmetrical grid alignments."
-    ],
-    mockClass: "diyar-mock",
-    mockHtml: `
-      <div class="load-preview-overlay">
-        <span class="overlay-img-placeholder">🪵</span>
-        <span class="overlay-tagline">Diyar Solid Timber Showroom</span>
-        <button class="btn btn-primary load-iframe-btn" data-url="https://diyar-q4xh.vercel.app/">Load Live Preview</button>
-      </div>
-    `
+    screenshots: [
+      { src: "projects/diyar/hero.png", caption: "Diyar Furniture Showroom — Desktop Atelier Collection" },
+      { src: "projects/diyar/mobile.png", caption: "Diyar Furniture Showroom — Mobile Room Space Showcase" }
+    ]
   }
 ];
 
-// Render Selected Projects list
-export function renderShowcase(filterVal = 'all') {
-  const container = document.getElementById('projects-showcase');
+// Active state variables for Lightbox
+let activeGallery = [];
+let activeIndex = 0;
+
+function renderProjects(filterVal = 'all') {
+  const container = document.getElementById('projects-list');
   if (!container) return;
 
   const filtered = filterVal === 'all' 
     ? projectsData 
-    : projectsData.filter(p => p.category === filterVal || p.tags.map(t=>t.toLowerCase()).includes(filterVal));
+    : projectsData.filter(p => p.category === filterVal);
 
   container.innerHTML = filtered.map(proj => `
-    <div class="showcase-item ${proj.layout} reveal" id="project-${proj.id}" data-category="${proj.category}">
+    <div class="project-fold ${proj.layout} reveal" id="project-${proj.id}">
       
-      <!-- Visual Demonstration Mockup -->
-      <div class="showcase-visual-wrapper">
-        <div class="preview-controls-bar">
-          <span class="control-label"><i data-lucide="monitor"></i> Live Preview</span>
-          <div class="dimension-selector-buttons">
-            <button class="dim-btn active" data-target="frame-${proj.id}" data-dim="desktop">Desktop</button>
-            <button class="dim-btn" data-target="frame-${proj.id}" data-dim="tablet">Tablet</button>
-            <button class="dim-btn" data-target="frame-${proj.id}" data-dim="mobile">Mobile</button>
-          </div>
-          <a href="${proj.liveUrl}" target="_blank" rel="noopener noreferrer" class="open-site-btn">
-            Open Full Site <i data-lucide="external-link"></i>
-          </a>
-        </div>
-
-        <div class="preview-frame-container" id="frame-${proj.id}">
-          <div class="frame-browser-header">
-            <div class="browser-dot"></div>
-            <div class="browser-dot"></div>
-            <div class="browser-dot"></div>
-            <div class="frame-address-bar">${proj.liveUrl.replace('https://', '')}</div>
-          </div>
-          <div class="frame-content-viewport" id="viewport-${proj.id}">
-            ${proj.mockHtml}
+      <!-- Large Screenshot Visual Frame -->
+      <div class="project-visual-wrapper" data-proj-id="${proj.id}">
+        <span class="hover-zoom-badge">View Gallery ↗</span>
+        <div class="screenshot-container">
+          <img src="${proj.screenshots[0].src}" alt="${proj.screenshots[0].caption}" class="main-screenshot" data-index="0">
+          <div class="mobile-screenshot-overlay">
+            <img src="${proj.screenshots[1].src}" alt="${proj.screenshots[1].caption}" class="mobile-screenshot" data-index="1">
           </div>
         </div>
       </div>
 
-      <!-- Info Column Details -->
-      <div class="showcase-info">
-        <span class="showcase-num">${proj.num} /</span>
-        <h3 class="showcase-title">${proj.title}</h3>
-        <span class="showcase-tagline">${proj.subtitle}</span>
-        <p class="showcase-desc">${proj.desc}</p>
+      <!-- Project Metadata Column -->
+      <div class="project-info">
+        <span class="project-num">${proj.number} /</span>
+        <h3 class="project-title">${proj.name}</h3>
+        <span class="project-tagline">${proj.tagline}</span>
+        <p class="project-desc">${proj.description}</p>
         
-        <div class="showcase-tags-container">
-          ${proj.tags.map(t => `<span class="tech-tag">${t}</span>`).join('')}
+        <div class="project-tech-tags">
+          ${proj.technologies.map(t => `<span class="tech-tag">${t}</span>`).join('')}
         </div>
 
-        <div class="showcase-actions-group">
-          <button class="action-link link-underline open-case-btn" data-id="${proj.id}">
-            Open Case Study <span class="arrow">&rarr;</span>
-          </button>
-          <a href="${proj.liveUrl}" target="_blank" rel="noopener noreferrer" class="action-link link-underline">
+        <div class="project-links">
+          <a href="${proj.url}" target="_blank" rel="noopener noreferrer" class="visit-link link-underline">
             Visit Live <span class="arrow">↗</span>
           </a>
         </div>
@@ -205,168 +128,130 @@ export function renderShowcase(filterVal = 'all') {
     </div>
   `).join('');
 
-  // Re-hydrate Lucide icons
-  if (typeof lucide !== 'undefined') {
-    lucide.createIcons();
+  // Re-hydrate reveal animations
+  setTimeout(() => {
+    const revealElements = container.querySelectorAll('.reveal');
+    if (typeof revealObserver !== 'undefined') {
+      revealElements.forEach(el => revealObserver.observe(el));
+    } else {
+      revealElements.forEach(el => el.classList.add('active'));
+    }
+  }, 50);
+
+  // Bind Lightbox triggers on screenshot clicks
+  bindLightboxEvents();
+}
+
+function bindLightboxEvents() {
+  const visualWrappers = document.querySelectorAll('.project-visual-wrapper');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+
+  visualWrappers.forEach(wrapper => {
+    const projId = wrapper.getAttribute('data-proj-id');
+    const proj = projectsData.find(p => p.id === projId);
+    if (!proj) return;
+
+    // Listen to image clicks inside this visual wrapper
+    const images = wrapper.querySelectorAll('img');
+    images.forEach(img => {
+      img.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const clickedIndex = parseInt(img.getAttribute('data-index')) || 0;
+        
+        activeGallery = proj.screenshots;
+        activeIndex = clickedIndex;
+        
+        openLightbox();
+      });
+    });
+  });
+}
+
+function openLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox) return;
+
+  updateLightboxContent();
+  lightbox.classList.add('active');
+  lightbox.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden'; // Lock back scroll
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox) return;
+
+  lightbox.classList.remove('active');
+  lightbox.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = ''; // Release scroll lock
+}
+
+function updateLightboxContent() {
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  
+  if (!lightboxImg || !lightboxCaption || activeGallery.length === 0) return;
+
+  const currentItem = activeGallery[activeIndex];
+  lightboxImg.src = currentItem.src;
+  lightboxImg.alt = currentItem.caption;
+  lightboxCaption.textContent = currentItem.caption;
+}
+
+function navigateLightbox(direction) {
+  if (activeGallery.length === 0) return;
+  
+  if (direction === 'next') {
+    activeIndex = (activeIndex + 1) % activeGallery.length;
+  } else {
+    activeIndex = (activeIndex - 1 + activeGallery.length) % activeGallery.length;
   }
-
-  // Bind Actions (Iframe loads, drawer toggles, sizes adjustments)
-  bindProjectActionEvents();
+  updateLightboxContent();
 }
 
-function bindProjectActionEvents() {
-  // 1. Click to Load Iframe Preview
-  const loadButtons = document.querySelectorAll('.load-iframe-btn');
-  loadButtons.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const url = btn.getAttribute('data-url');
-      const viewport = btn.parentElement.parentElement;
-      const projId = viewport.id.replace('viewport-', '');
-      
-      // Inject Iframe
-      viewport.innerHTML = `
-        <iframe src="${url}" class="live-iframe" loading="lazy" title="Live preview for project"></iframe>
-      `;
-      
-      // Verification handler - if iframe gets blocked or crashes
-      const iframe = viewport.querySelector('iframe');
-      iframe.onerror = () => {
-        viewport.innerHTML = `
-          <div class="iframe-fallback-card">
-            <span class="fallback-txt">Iframe display is restricted by security parameters on the deployment.</span>
-            <a href="${url}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Open Live Site ↗</a>
-          </div>
-        `;
-      };
-    });
-  });
-
-  // 2. Iframe Dimension Toggles (Desktop, Tablet, Mobile)
-  const dimButtons = document.querySelectorAll('.dim-btn');
-  dimButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const targetId = btn.getAttribute('data-target');
-      const dim = btn.getAttribute('data-dim');
-      const frame = document.getElementById(targetId);
-      if (!frame) return;
-
-      // Update button highlights
-      const row = btn.parentElement;
-      row.querySelectorAll('.dim-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      // Adjust widths
-      frame.classList.remove('tablet-width', 'mobile-width');
-      if (dim === 'tablet') {
-        frame.classList.add('tablet-width');
-      } else if (dim === 'mobile') {
-        frame.classList.add('mobile-width');
-      }
-    });
-  });
-
-  // 3. Open Slide Case Study Drawer
-  const openCaseButtons = document.querySelectorAll('.open-case-btn');
-  const drawer = document.getElementById('project-drawer');
-  const drawerTitle = document.getElementById('drawer-title');
-  const drawerNum = document.getElementById('drawer-num');
-  const drawerContent = document.getElementById('drawer-content-box');
-
-  openCaseButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const id = btn.getAttribute('data-id');
-      const proj = projectsData.find(p => p.id === id);
-      if (!proj || !drawer || !drawerContent) return;
-
-      // Populate drawer content
-      drawerNum.textContent = `${proj.num} /`;
-      drawerTitle.textContent = proj.title;
-      
-      drawerContent.innerHTML = `
-        <div class="drawer-case-study">
-          <p class="case-summary">${proj.desc}</p>
-          
-          <div class="case-grid">
-            <div class="case-meta-cell">
-              <span class="cell-lbl">Role</span>
-              <span class="cell-val">${proj.role}</span>
-            </div>
-            <div class="case-meta-cell">
-              <span class="cell-lbl">Deliverable</span>
-              <span class="cell-val">${proj.subtitle}</span>
-            </div>
-          </div>
-
-          <div class="case-features-wrapper">
-            <h4 class="case-sec-title">Key System Features</h4>
-            <ul class="case-bullets">
-              ${proj.features.map(f => `<li>${f}</li>`).join('')}
-            </ul>
-          </div>
-
-          <div class="case-features-wrapper">
-            <h4 class="case-sec-title">Technology Stack</h4>
-            <div class="showcase-tags-container" style="margin-top: 0.5rem;">
-              ${proj.tags.map(t => `<span class="tech-tag">${t}</span>`).join('')}
-            </div>
-          </div>
-
-          <div class="case-actions">
-            <a href="${proj.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-              Visit Live Website <span class="arrow">↗</span>
-            </a>
-          </div>
-        </div>
-      `;
-
-      // Show drawer
-      drawer.classList.add('active');
-      drawer.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden'; // Lock background scrolling
-    });
-  });
-}
-
-// Bind close events to drawer elements
+// Global initialization
 document.addEventListener('DOMContentLoaded', () => {
-  const drawer = document.getElementById('project-drawer');
-  const closeBtn = document.querySelector('.drawer-close-btn');
+  renderProjects('all');
 
-  if (drawer && closeBtn) {
-    const closeDrawer = () => {
-      drawer.classList.remove('active');
-      drawer.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = ''; // Release scroll lock
-    };
-
-    closeBtn.addEventListener('click', closeDrawer);
-    
-    // Close on clicking outside body box (clicking the drawer background overlay)
-    drawer.addEventListener('click', (e) => {
-      if (e.target === drawer) {
-        closeDrawer();
-      }
-    });
-
-    // Close on Escape key press
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && drawer.classList.contains('active')) {
-        closeDrawer();
-      }
-    });
-  }
-
-  // Initial showcase render
-  renderShowcase('all');
-
-  // Filter Buttons actions
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  filterButtons.forEach(btn => {
+  // Filter click handlers
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterButtons.forEach(b => b.classList.remove('active'));
+      filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       const filter = btn.getAttribute('data-filter');
-      renderShowcase(filter);
+      renderProjects(filter);
     });
+  });
+
+  // Lightbox Close/Prev/Next buttons
+  const closeBtn = document.getElementById('lightbox-close');
+  const prevBtn = document.getElementById('lightbox-prev');
+  const nextBtn = document.getElementById('lightbox-next');
+  const lightbox = document.getElementById('lightbox');
+
+  if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+  if (prevBtn) prevBtn.addEventListener('click', () => navigateLightbox('prev'));
+  if (nextBtn) nextBtn.addEventListener('click', () => navigateLightbox('next'));
+  
+  if (lightbox) {
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+  }
+
+  // Keyboards controls (Escape, Left/Right arrows)
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox || !lightbox.classList.contains('active')) return;
+    
+    if (e.key === 'Escape') {
+      closeLightbox();
+    } else if (e.key === 'ArrowRight') {
+      navigateLightbox('next');
+    } else if (e.key === 'ArrowLeft') {
+      navigateLightbox('prev');
+    }
   });
 });
