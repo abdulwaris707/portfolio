@@ -99,12 +99,14 @@ function renderProjects(filterVal = 'all') {
               <span class="dot green"></span>
               <div class="browser-address">localhost:3000/${proj.id}</div>
             </div>
-            <img src="${proj.screenshot}" alt="${proj.caption}" class="browser-screenshot" loading="lazy">
-          </div>
-          <div class="hover-overlay-hint">
-            <span class="overlay-badge">
-              <i data-lucide="zoom-in" style="width: 14px; height: 14px;"></i> View Screenshot ↗
-            </span>
+            <div class="browser-screenshot-container">
+              <img src="${proj.screenshot}" alt="${proj.caption}" class="browser-screenshot" loading="lazy">
+              <div class="hover-overlay-hint">
+                <span class="overlay-badge">
+                  <i data-lucide="zoom-in" style="width: 14px; height: 14px;"></i> View Screenshot ↗
+                </span>
+              </div>
+            </div>
           </div>
         </div>
 
