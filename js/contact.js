@@ -1,6 +1,6 @@
 /**
- * Interactive Contact Form & Validation Module
- * Abdul Waris — Contact Portal Validation
+ * Rebuilt Sanitized Contact Form Validation Module
+ * Abdul Waris — Contact Controller
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,88 +11,95 @@ document.addEventListener('DOMContentLoaded', () => {
   const inputEmail = document.getElementById('form-email');
   const inputSubject = document.getElementById('form-subject');
   const inputMessage = document.getElementById('form-message');
-  const feedbackEl = document.getElementById('form-feedback');
+  const feedbackEl = document.getElementById('form-feedback-overlay');
 
-  const errorName = document.getElementById('error-name');
-  const errorEmail = document.getElementById('error-email');
-  const errorSubject = document.getElementById('error-subject');
-  const errorMessage = document.getElementById('error-message');
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  const validateEmail = (email) => {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email.trim());
+  // Simple HTML stripping sanitization to prevent XSS risk
+  const sanitizeHTML = (str) => {
+    return str.replace(/<[^>]*>/g, '').trim();
   };
 
-  const clearErrors = () => {
-    const groups = form.querySelectorAll('.form-group');
-    groups.forEach(g => g.classList.remove('invalid'));
+  const clearValidationErrors = () => {
+    const cells = form.querySelectorAll('.form-cell');
+    cells.forEach(c => c.classList.remove('invalid'));
     feedbackEl.style.display = 'none';
-    feedbackEl.className = 'form-feedback';
+    feedbackEl.className = 'form-feedback-overlay';
   };
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    clearErrors();
+    clearValidationErrors();
 
     let isValid = true;
 
-    // Validate Name
-    if (!inputName.value.trim()) {
+    // 1. Validate Name
+    const sanitizedName = sanitizeHTML(inputName.value);
+    if (!sanitizedName) {
       inputName.parentElement.classList.add('invalid');
       isValid = false;
     }
 
-    // Validate Email
-    if (!inputEmail.value.trim() || !validateEmail(inputEmail.value)) {
+    // 2. Validate Email
+    const sanitizedEmail = sanitizeHTML(inputEmail.value);
+    if (!sanitizedEmail || !emailRegex.test(sanitizedEmail)) {
       inputEmail.parentElement.classList.add('invalid');
       isValid = false;
     }
 
-    // Validate Subject
-    if (!inputSubject.value.trim()) {
+    // 3. Validate Subject
+    const sanitizedSubject = sanitizeHTML(inputSubject.value);
+    if (!sanitizedSubject) {
       inputSubject.parentElement.classList.add('invalid');
       isValid = false;
     }
 
-    // Validate Message (Min 10 characters)
-    if (!inputMessage.value.trim() || inputMessage.value.trim().length < 10) {
+    // 4. Validate Message (Min 10 characters)
+    const sanitizedMessage = sanitizeHTML(inputMessage.value);
+    if (!sanitizedMessage || sanitizedMessage.length < 10) {
       inputMessage.parentElement.classList.add('invalid');
       isValid = false;
     }
 
     if (!isValid) {
-      feedbackEl.textContent = "Please correct the highlighted errors in the form.";
+      feedbackEl.textContent = "Please correct the errors in the fields highlighted in red.";
       feedbackEl.classList.add('error');
       feedbackEl.style.display = 'block';
       return;
     }
 
-    // Form is valid - Trigger client-side mailto redirect (Truthful feedback)
-    feedbackEl.textContent = "Form validated. Redirecting to your email client to complete transmission...";
+    // Update Input values with sanitized versions
+    inputName.value = sanitizedName;
+    inputEmail.value = sanitizedEmail;
+    inputSubject.value = sanitizedSubject;
+    inputMessage.value = sanitizedMessage;
+
+    // Show redirection feedback
+    feedbackEl.textContent = "Validation complete. Redirecting to your email client to compile mail...";
     feedbackEl.classList.add('success');
     feedbackEl.style.display = 'block';
 
-    const destinationEmail = '2003abdulwaris@gmail.com';
-    const subject = encodeURIComponent(inputSubject.value.trim());
-    const bodyStr = `Hi Abdul,\n\nName: ${inputName.value.trim()}\nEmail: ${inputEmail.value.trim()}\n\nMessage:\n${inputMessage.value.trim()}`;
-    const body = encodeURIComponent(bodyStr);
+    const destinationMail = '2003abdulwaris@gmail.com';
+    const emailSubject = encodeURIComponent(sanitizedSubject);
+    const emailBody = encodeURIComponent(
+      `Hi Abdul,\n\nName: ${sanitizedName}\nEmail: ${sanitizedEmail}\n\nMessage:\n${sanitizedMessage}`
+    );
 
     setTimeout(() => {
-      // Trigger the mail client
-      window.location.href = `mailto:${destinationEmail}?subject=${subject}&body=${body}`;
+      // Trigger local mailto compilation
+      window.location.href = `mailto:${destinationMail}?subject=${emailSubject}&body=${emailBody}`;
       
-      // Clear inputs
       form.reset();
-      clearErrors();
+      clearValidationErrors();
     }, 1200);
   });
 
-  // Real-time cleanup validations on input typing
+  // Dynamic feedback clears on type
   inputName.addEventListener('input', () => {
     if (inputName.value.trim()) inputName.parentElement.classList.remove('invalid');
   });
   inputEmail.addEventListener('input', () => {
-    if (inputEmail.value.trim() && validateEmail(inputEmail.value)) {
+    if (inputEmail.value.trim() && emailRegex.test(inputEmail.value.trim())) {
       inputEmail.parentElement.classList.remove('invalid');
     }
   });

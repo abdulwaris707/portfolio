@@ -1,43 +1,45 @@
 /* ==========================================================================
-   Responsive Stylesheet - Abdul Waris Portfolio
-   Targeting: 1920px, 1440px, 1280px, 1024px, 768px, 414px, 390px
+   Abdul Waris — Rebuilt Responsive Media Stylesheet
    ========================================================================== */
 
-/* 1. Large Displays (1920px and above) */
+/* 1. Large Screen Displays (1920px and above) */
 @media screen and (min-width: 1920px) {
   html {
-    font-size: 18px; /* Scales up visual size for huge screens */
+    font-size: 18px;
   }
   .header-container, 
   .hero-container, 
   .works-container, 
   .about-container, 
   .stack-container, 
+  .resume-container, 
   .contact-container, 
   .footer-container {
     max-width: 1600px;
   }
 }
 
-/* 2. Standard Desktop / Laptops (1280px to 1440px) */
+/* 2. Standard Laptops (1280px to 1440px) */
 @media screen and (max-width: 1440px) {
-  .hero-title {
-    font-size: 3.5rem;
+  .hero-headline {
+    font-size: 4rem;
+  }
+  .project-drawer {
+    width: 60%;
   }
 }
 
 @media screen and (max-width: 1280px) {
-  .hero-title {
-    font-size: 3.25rem;
+  .hero-headline {
+    font-size: 3.5rem;
   }
   .section-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 }
 
-/* 3. Small Laptops / Tablets (768px to 1024px) */
+/* 3. Small Laptops & Netbooks (1024px and below) */
 @media screen and (max-width: 1024px) {
-  /* Layout shifts from columns to vertical stacks */
   .hero-container {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
@@ -51,143 +53,178 @@
     align-items: center;
   }
   
-  .hero-visual-frame {
+  .hero-collage {
     grid-column: span 12;
-    max-width: 420px;
-    margin: 0 auto;
-    width: 100%;
+    height: 320px;
+  }
+  
+  .hero-metrics {
+    grid-column: span 12;
   }
 
-  .hero-metadata {
-    grid-column: span 12;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-  }
-
-  /* Projects layout stacking */
-  .project-card {
+  /* Projects Showcase Stacking */
+  .showcase-item {
     grid-template-columns: 1fr !important;
     gap: var(--space-md);
   }
-  .project-visual-wrapper, .project-details {
+  
+  .showcase-visual-wrapper, .showcase-info {
     grid-column: span 12 !important;
     grid-row: auto !important;
+    padding-left: 0 !important;
   }
 
-  /* About section stacking */
+  /* Slide-out Drawer Panel widths */
+  .project-drawer {
+    width: 80%;
+    min-width: 0;
+  }
+
+  /* About and Stack lists stacking */
   .about-grid {
     grid-template-columns: 1fr;
     gap: var(--space-md);
   }
-  .about-philosophy, .about-narrative {
+  .about-lead, .about-narrative {
     grid-column: span 12;
-    max-width: 100%;
   }
-
-  /* Stack grid layouts */
+  
   .stack-row {
     grid-template-columns: 1fr;
     gap: 0.5rem;
-    padding: var(--space-md) 0;
-  }
-  .row-skills {
-    gap: 0.75rem;
   }
 
-  /* Contact section layout */
-  .contact-grid {
+  /* Contact and Forms */
+  .contact-asym-layout {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
   }
-  .contact-info, .contact-form-wrapper {
+  .contact-statement, .contact-form-card {
     grid-column: span 12;
   }
 }
 
-/* 4. Tablets & Mobile Portrait (max-width: 768px) */
+/* 4. Tablets & Portrait Screens (768px and below) */
 @media screen and (max-width: 768px) {
   .section-padding {
     padding-top: var(--space-xl);
     padding-bottom: var(--space-xl);
   }
-  
-  /* Mobile Menu Header Trigger */
+
+  /* Hamburger Navigation Menu */
   .mobile-nav-toggle {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: 1px solid var(--border-color);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
     z-index: 110;
   }
-  
+
   .nav-menu {
     position: fixed;
     top: 0;
     right: 0;
-    width: 280px;
+    width: 100%;
     height: 100vh;
     background-color: var(--surface-color);
-    border-left: 1px solid var(--border-color);
-    padding: 6rem var(--space-md) var(--space-md);
+    border-left: none;
+    padding: 7rem var(--space-md) var(--space-md);
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: flex-start;
     gap: var(--space-md);
-    transform: translateX(100%);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(-100%);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 105;
-    box-shadow: -10px 0 30px rgba(0,0,0,0.05);
-  }
-  
-  .nav-menu.active {
-    transform: translateX(0);
-  }
-  
-  .nav-link {
-    font-size: 1rem;
-    width: 100%;
-    padding: var(--space-xs) 0;
-    border-bottom: 1px solid var(--border-color);
-  }
-  .nav-link.resume-link {
-    border: none;
-    padding: var(--space-xs) 0;
   }
 
-  /* Hero adjustments */
-  .hero-title {
-    font-size: 2.75rem;
-    line-height: 1.1;
+  .nav-menu.active {
+    transform: translateY(0);
   }
-  .hero-br {
+
+  .nav-link {
+    font-size: 1.25rem;
+    padding: 0.5rem 0;
+  }
+
+  /* Hero headline text size */
+  .hero-headline {
+    font-size: 2.75rem;
+  }
+
+  /* Hide tablet controls on smaller screens */
+  .dim-btn[data-dim="tablet"] {
     display: none;
   }
 
-  /* Projects visuals */
-  .mock-browser-window {
-    aspect-ratio: 16 / 11;
+  /* Case study drawers occupy full viewport */
+  .project-drawer {
+    width: 100%;
+    border-left: none;
   }
 
-  /* Stack typography layout */
-  .row-category {
-    font-size: 1.25rem;
+  /* Resume structure formatting */
+  .resume-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+  .resume-actions {
+    width: 100%;
+  }
+  .resume-actions .btn {
+    flex-grow: 1;
+    justify-content: center;
+  }
+
+  .preview-section {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  .section-lbl {
+    border-right: none;
+    border-bottom: 1.5px solid #eee;
+    padding-right: 0;
+    padding-bottom: 0.25rem;
+    align-self: flex-start;
+  }
+
+  /* Footer top stack */
+  .footer-top {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+  .footer-nav-links {
+    flex-wrap: wrap;
+    gap: var(--space-sm);
   }
 }
 
-/* 5. Compact Mobile viewports (390px to 414px and below) */
+/* 5. Compact Viewports (414px, 390px and below) */
 @media screen and (max-width: 414px) {
   html {
-    font-size: 15px; /* Scales down body base slightly for micro screens */
+    font-size: 15px;
   }
-  
-  .hero-title {
+
+  .hero-headline {
     font-size: 2.25rem;
   }
 
   .section-title {
-    font-size: 2.125rem;
+    font-size: 2.25rem;
+  }
+
+  .statement-headline {
+    font-size: 2.25rem;
   }
 
   .hero-ctas {
-    width: 100%;
     flex-direction: column;
+    width: 100%;
     gap: var(--space-xs);
   }
   .hero-ctas .btn {
@@ -195,29 +232,44 @@
     justify-content: center;
   }
 
-  /* Contact Button layout for mobile touch targets */
-  .contact-buttons {
-    width: 100%;
+  /* Collage offsets scale down */
+  .hero-collage {
+    height: 280px;
   }
-  .contact-btn {
-    width: 100%;
-    min-width: 100%;
-    padding: 0.95rem; /* Larger touch layout */
-    font-size: 0.875rem;
+  .collage-item.item-1 { width: 140px; }
+  .collage-item.item-2 { width: 150px; }
+  .collage-item.item-3 { width: 130px; }
+
+  /* Metrics change to vertical stack */
+  .hero-metrics {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
   }
 
-  /* Form spacing compressions */
-  .contact-form-wrapper {
-    padding: var(--space-md);
-  }
-  
-  .project-actions {
+  /* Visual preview resizers hide completely */
+  .preview-controls-bar {
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--space-xs);
+    gap: 0.5rem;
+  }
+  .dimension-selector-buttons {
+    display: none; /* Mobile viewport doesn't allow desktop sizes */
   }
 
-  .footer-meta {
+  /* Contact channels spacing */
+  .direct-channels {
+    width: 100%;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form-card {
+    padding: var(--space-md);
+  }
+
+  .footer-bottom {
     flex-direction: column;
     gap: var(--space-sm);
     text-align: center;
@@ -225,11 +277,13 @@
 }
 
 @media screen and (max-width: 390px) {
-  .hero-title {
+  .hero-headline {
     font-size: 2.125rem;
   }
-  .visual-canvas {
-    max-width: 290px;
-    margin: 0 auto;
+  .section-title {
+    font-size: 2.125rem;
+  }
+  .statement-headline {
+    font-size: 2.125rem;
   }
 }

@@ -1,8 +1,12 @@
-/* Page Load Text Reveal */
-@keyframes revealFadeUp {
+/* ==========================================================================
+   Abdul Waris — Rebuilt Motion & Keyframes Stylesheet
+   ========================================================================== */
+
+/* Page Entrance Keyframe */
+@keyframes studioFadeUp {
   0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
   }
   100% {
     opacity: 1;
@@ -10,41 +14,52 @@
   }
 }
 
-/* Apply load animations to Hero */
-.hero-header-tags {
+@keyframes scaleRotateIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) rotate(-3deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Apply Hero Entrances */
+.hero-subline {
   opacity: 0;
-  animation: revealFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: studioFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   animation-delay: 0.1s;
 }
 
-.hero-title {
+.hero-headline {
   opacity: 0;
-  animation: revealFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: studioFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   animation-delay: 0.25s;
 }
 
 .hero-ctas {
   opacity: 0;
-  animation: revealFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: studioFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   animation-delay: 0.4s;
 }
 
-.hero-metadata {
+.hero-metrics {
   opacity: 0;
-  animation: revealFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  animation-delay: 0.5s;
+  animation: studioFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.55s;
 }
 
-.hero-visual-frame {
+.hero-collage {
   opacity: 0;
-  animation: revealFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: scaleRotateIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   animation-delay: 0.35s;
 }
 
-/* Scroll Reveal Classes (Bound to Intersection Observer) */
+/* Scroll Intersection Observer Hooks */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(50px);
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
 }
@@ -54,21 +69,21 @@
   transform: translateY(0);
 }
 
-/* Stagger delays for rows/grids */
-.reveal-child-1 { transition-delay: 0.1s; }
-.reveal-child-2 { transition-delay: 0.2s; }
-.reveal-child-3 { transition-delay: 0.3s; }
-.reveal-child-4 { transition-delay: 0.4s; }
+/* Stagger delay loops */
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
 
-/* Subtle project card scale hover */
-.project-visual-wrapper img {
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+/* Asymmetrical project scaling hover details */
+.preview-frame-container {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1), width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.project-visual-wrapper:hover img {
-  transform: scale(1.02);
+.showcase-visual-wrapper:hover .preview-frame-container {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.04);
 }
 
-/* Tech row slide-over highlight */
+/* Capability Row Slide In border reveals */
 .stack-row {
   position: relative;
   transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), padding-left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -83,7 +98,7 @@
   background-color: var(--accent-color);
   transform: scaleY(0);
   transform-origin: bottom;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .stack-row:hover {
@@ -95,7 +110,7 @@
   transform-origin: top;
 }
 
-/* Accessibility: Silent Motion Overrides */
+/* Accessibility reduced motion overrides */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
