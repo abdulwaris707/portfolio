@@ -734,7 +734,9 @@ a[href*="#works"]:hover .arrow {
 .project-visual-wrapper {
   width: 100%;
   position: relative;
-  cursor: zoom-in;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
 }
 
 .project-visual-wrapper .browser-mockup {

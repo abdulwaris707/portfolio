@@ -90,25 +90,25 @@ function renderProjects(filterVal = 'all') {
     <div class="project-wrapper ${proj.bgClass} reveal" id="project-${proj.id}">
       <div class="project-fold ${proj.layout}">
         
-        <!-- Large Mockup Screenshot Visual -->
-        <div class="project-visual-wrapper" data-proj-id="${proj.id}" data-global-idx="${projectsData.indexOf(proj)}">
+        <!-- Large Mockup Screenshot Visual (Clickable Link to live website) -->
+        <a href="${proj.url}" target="_blank" rel="noopener noreferrer" class="project-visual-wrapper" data-proj-id="${proj.id}" aria-label="Visit ${proj.name} live website">
           <div class="browser-mockup">
             <div class="browser-header">
               <span class="dot red"></span>
               <span class="dot yellow"></span>
               <span class="dot green"></span>
-              <div class="browser-address">localhost:3000/${proj.id}</div>
+              <div class="browser-address">${proj.url.replace('https://', '')}</div>
             </div>
             <div class="browser-screenshot-container">
               <img src="${proj.screenshot}" alt="${proj.caption}" class="browser-screenshot" loading="lazy">
               <div class="hover-overlay-hint">
                 <span class="overlay-badge">
-                  <i data-lucide="zoom-in" style="width: 14px; height: 14px;"></i> View Screenshot ↗
+                  <i data-lucide="external-link" style="width: 14px; height: 14px;"></i> Visit Live Site ↗
                 </span>
               </div>
             </div>
           </div>
-        </div>
+        </a>
 
         <!-- Project Info -->
         <div class="project-info">
