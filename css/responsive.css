@@ -50,6 +50,10 @@
     align-items: center;
   }
   
+  .hero-roles-bar {
+    justify-content: center;
+  }
+  
   .hero-subtitle {
     margin-left: auto;
     margin-right: auto;
