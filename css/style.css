@@ -1463,12 +1463,15 @@ a[href*="#works"]:hover .arrow {
 .about-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: var(--space-lg);
+  gap: var(--space-xl);
   align-items: start;
 }
 
 .about-heading-col {
   grid-column: span 5;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
 }
 
 .about-heading-col .section-title {
@@ -1476,11 +1479,79 @@ a[href*="#works"]:hover .arrow {
   line-height: 1.2;
 }
 
+/* Profile Summary Quick-Facts Card */
+.about-profile-card {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  box-shadow: 0 10px 30px -10px rgba(17, 24, 39, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.about-fact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid #F1F5F9;
+}
+.about-fact-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0.25rem;
+}
+
+.fact-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background-color: rgba(37, 99, 235, 0.08);
+  color: var(--primary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.fact-icon i {
+  width: 16px;
+  height: 16px;
+}
+.fact-icon.teal {
+  background-color: rgba(15, 118, 110, 0.08);
+  color: var(--secondary-teal);
+}
+.fact-icon.amber {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: #D97706;
+}
+
+.fact-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.fact-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.fact-val {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+}
+
 .about-metadata {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem;
-  margin-top: var(--space-md);
+  margin-top: 0.25rem;
 }
 .meta-tag {
   font-family: var(--font-mono);
@@ -1498,16 +1569,116 @@ a[href*="#works"]:hover .arrow {
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
-  font-size: 1rem;
   color: var(--text-secondary);
-  line-height: 1.7;
 }
 
 .about-lead {
   font-size: 1.125rem;
-  font-weight: 600;
-  color: var(--text-color);
+  font-weight: 700;
+  color: var(--primary-navy);
   line-height: 1.6;
+}
+
+/* About Narrative Pillar Cards */
+.about-pillars-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.about-pillar-card {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  transition: var(--transition-smooth);
+}
+
+.about-pillar-card:hover {
+  border-color: var(--primary-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -8px rgba(37, 99, 235, 0.08);
+}
+
+.pillar-header {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.35rem;
+}
+
+.pillar-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  background-color: rgba(37, 99, 235, 0.08);
+  color: var(--primary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.pillar-icon i {
+  width: 15px;
+  height: 15px;
+}
+.pillar-icon.teal {
+  background-color: rgba(15, 118, 110, 0.08);
+  color: var(--secondary-teal);
+}
+.pillar-icon.amber {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: #D97706;
+}
+
+.pillar-title {
+  font-size: 0.9375rem;
+  font-weight: 800;
+  color: var(--primary-navy);
+}
+
+.pillar-desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* About Metrics Strip */
+.about-metrics-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+  margin-top: 0.25rem;
+}
+
+.metric-pill-box {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 0.85rem;
+  text-align: center;
+  transition: var(--transition-smooth);
+}
+
+.metric-pill-box:hover {
+  border-color: var(--primary-blue);
+  box-shadow: 0 8px 20px -6px rgba(37, 99, 235, 0.08);
+}
+
+.metric-pill-num {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary-blue);
+  line-height: 1.1;
+}
+
+.metric-pill-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-top: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 /* Toolkit Skills Grids */

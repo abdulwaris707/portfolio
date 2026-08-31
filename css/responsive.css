@@ -265,6 +265,10 @@
     grid-template-columns: 1fr;
   }
 
+  .about-metrics-strip {
+    grid-template-columns: 1fr;
+  }
+
   .resume-actions .btn {
     width: 100%;
   }
