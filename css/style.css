@@ -871,6 +871,588 @@ a[href*="#works"]:hover .arrow {
   color: var(--primary-navy);
 }
 
+/* ==========================================================================
+   UI/UX Design Section Styles
+   ========================================================================== */
+.uiux {
+  background-color: var(--bg-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.uiux-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.uiux-intro-desc {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  max-width: 780px;
+  margin: var(--space-sm) auto 0;
+  text-align: center;
+}
+
+.uiux-subheading {
+  font-size: 1.125rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary-navy);
+  margin-bottom: var(--space-md);
+}
+
+/* 1. Tools Cards Grid */
+.uiux-tools-wrapper {
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+}
+
+.uiux-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.uiux-tool-card {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.uiux-tool-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary-blue);
+  box-shadow: 0 12px 30px -8px rgba(37, 99, 235, 0.08);
+}
+
+.uiux-tool-card.primary-tool {
+  border-color: rgba(37, 99, 235, 0.35);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+  box-shadow: 0 4px 20px -4px rgba(37, 99, 235, 0.06);
+}
+
+.uiux-tool-card.primary-tool:hover {
+  border-color: var(--primary-blue);
+  box-shadow: 0 14px 35px -8px rgba(37, 99, 235, 0.12);
+}
+
+.tool-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+.tool-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.figma-bg {
+  background-color: #F8FAFC;
+  border: 1px solid var(--border-color);
+}
+
+.canva-bg {
+  background-color: rgba(0, 196, 204, 0.1);
+  color: #008B91;
+}
+.canva-bg i {
+  width: 22px;
+  height: 22px;
+}
+
+.adobe-bg {
+  background-color: rgba(235, 16, 0, 0.08);
+  color: #EB1000;
+}
+.adobe-bg i {
+  width: 22px;
+  height: 22px;
+}
+
+.tool-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.tool-name {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--primary-navy);
+}
+
+.tool-badge {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  background-color: var(--bg-color);
+  padding: 0.15rem 0.5rem;
+  border-radius: 50px;
+  display: inline-block;
+  align-self: flex-start;
+}
+
+.tool-badge.primary {
+  color: var(--primary-blue);
+  background-color: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.18);
+}
+
+.tool-desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: var(--space-md);
+}
+
+.tool-caps-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: auto;
+}
+
+.tool-cap-tag {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+}
+
+/* 2. Process Workflow */
+.uiux-process-wrapper {
+  margin-bottom: var(--space-2xl);
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl) var(--space-lg);
+  box-shadow: 0 10px 30px -10px rgba(17, 24, 39, 0.03);
+}
+
+.process-flow-track {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr auto 1fr;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: var(--space-md);
+}
+
+.process-step-item {
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  transition: var(--transition-smooth);
+}
+
+.process-step-item:hover {
+  border-color: var(--primary-blue);
+  transform: translateY(-2px);
+  background-color: #FFFFFF;
+  box-shadow: 0 8px 20px -6px rgba(37, 99, 235, 0.08);
+}
+
+.process-step-num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--primary-blue);
+  letter-spacing: 0.05em;
+}
+
+.process-step-title {
+  font-size: 0.9375rem;
+  font-weight: 800;
+  color: var(--primary-navy);
+}
+
+.process-step-desc {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.process-arrow {
+  color: var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.process-arrow i {
+  width: 18px;
+  height: 18px;
+}
+
+/* 3. Design Showcase Subsection */
+.uiux-showcase-section {
+  margin-top: var(--space-xl);
+}
+
+.showcase-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.showcase-desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.figma-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  background-color: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  color: var(--primary-blue);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0.4rem 0.85rem;
+  border-radius: 50px;
+}
+
+.uiux-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.design-card {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+}
+
+.design-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(37, 99, 235, 0.4);
+  box-shadow: 0 16px 35px -10px rgba(17, 24, 39, 0.08);
+}
+
+.design-preview-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background-color: #F1F5F9;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.design-canvas-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.design-card:hover .design-canvas-placeholder {
+  transform: scale(1.02);
+}
+
+.design-canvas-1 {
+  background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);
+}
+
+.design-canvas-2 {
+  background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%);
+}
+
+.design-canvas-3 {
+  background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+}
+
+.design-type-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: rgba(17, 24, 39, 0.85);
+  backdrop-filter: blur(4px);
+  color: #FFFFFF;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.55rem;
+  border-radius: var(--radius-sm);
+  z-index: 5;
+}
+
+/* Canvas Mockup Elements (High-Fidelity Placeholders) */
+.canvas-mockup-inner {
+  width: 82%;
+  height: 82%;
+  background-color: var(--surface-color);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem;
+  box-shadow: 0 8px 16px -4px rgba(17, 24, 39, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  justify-content: center;
+}
+
+.canvas-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.2rem;
+}
+
+.canvas-pill {
+  width: 32px;
+  height: 6px;
+  background-color: #E2E8F0;
+  border-radius: 50px;
+}
+
+.canvas-circle {
+  width: 10px;
+  height: 10px;
+  background-color: var(--primary-blue);
+  border-radius: 50%;
+}
+
+.canvas-hero-box {
+  background-color: #F8FAFC;
+  border-radius: 3px;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid #E2E8F0;
+}
+
+.canvas-stat-val {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--primary-navy);
+  line-height: 1.1;
+}
+
+.canvas-stat-sub {
+  font-size: 0.55rem;
+  color: var(--text-secondary);
+}
+
+.canvas-row {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.canvas-item-icon {
+  width: 14px;
+  height: 14px;
+  background-color: #EEF2FF;
+  border-radius: 2px;
+}
+
+.canvas-item-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.canvas-line-1 {
+  width: 70%;
+  height: 4px;
+  background-color: #CBD5E1;
+  border-radius: 2px;
+}
+
+.canvas-line-2 {
+  width: 40%;
+  height: 3px;
+  background-color: #E2E8F0;
+  border-radius: 2px;
+}
+
+/* Canvas 2 Dashboard Mockup */
+.canvas-dash-header {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.canvas-dash-line {
+  width: 50%;
+  height: 4px;
+  background-color: #CBD5E1;
+  border-radius: 2px;
+}
+
+.canvas-dash-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.3rem;
+}
+
+.canvas-dash-metric {
+  background-color: #F8FAFC;
+  padding: 0.3rem;
+  border-radius: 2px;
+  border: 1px solid #E2E8F0;
+}
+
+.canvas-metric-val {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--secondary-teal);
+}
+
+.canvas-metric-lbl {
+  font-size: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.canvas-chart-mock {
+  height: 28px;
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  padding-top: 2px;
+}
+
+.canvas-chart-bar {
+  flex: 1;
+  background-color: rgba(37, 99, 235, 0.4);
+  border-radius: 1px;
+}
+
+/* Canvas 3 Editorial Mockup */
+.canvas-hero-editorial {
+  text-align: center;
+  padding: 0.2rem 0;
+}
+
+.canvas-editorial-title {
+  font-size: 0.55rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--primary-navy);
+}
+
+.canvas-editorial-btn {
+  font-size: 0.45rem;
+  background-color: var(--primary-navy);
+  color: #FFFFFF;
+  padding: 1px 6px;
+  border-radius: 2px;
+  display: inline-block;
+  margin-top: 2px;
+}
+
+.canvas-products-row {
+  display: flex;
+  gap: 4px;
+}
+
+.canvas-prod-card {
+  flex: 1;
+  height: 26px;
+  background-color: #F1F5F9;
+  border-radius: 2px;
+  border: 1px solid #E2E8F0;
+}
+
+.design-card-content {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.design-meta-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.35rem;
+}
+
+.design-cat {
+  font-size: 0.6875rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary-blue);
+}
+
+.design-tool {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.design-title {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--primary-navy);
+  line-height: 1.25;
+  margin-bottom: var(--space-xs);
+}
+
+.design-summary {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: var(--space-md);
+}
+
+.design-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: var(--space-md);
+}
+
+.design-action-row {
+  margin-top: auto;
+}
+
+.btn-small {
+  padding: 0.55rem 1.15rem;
+  font-size: 0.75rem;
+  min-height: 38px;
+}
+
 /* About Section layouts */
 .about-container {
   max-width: 1440px;
