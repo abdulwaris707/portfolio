@@ -890,7 +890,7 @@ a[href*="#works"]:hover .arrow {
 }
 
 .about-heading-col .section-title {
-  font-size: 2.25rem;
+  font-size: clamp(1.65rem, 3.8vw, 2.25rem);
   line-height: 1.2;
 }
 

@@ -260,8 +260,8 @@
   }
 }
 
-/* 5. Small Mobile Viewports (390px, 375px, 320px and below) */
-@media screen and (max-width: 390px) {
+/* 5. Small Mobile Viewports (576px and below) */
+@media screen and (max-width: 576px) {
   .hero-ctas {
     flex-direction: column;
     width: 100%;
