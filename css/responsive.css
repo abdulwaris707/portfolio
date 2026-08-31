@@ -43,7 +43,7 @@
   }
   
   .hero-text-content {
-    grid-column: span 12;
+    grid-column: 1 / -1 !important;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,7 +55,7 @@
   }
   
   .hero-visual {
-    grid-column: span 12;
+    grid-column: 1 / -1 !important;
     max-width: 480px;
     width: 100%;
     margin: 0 auto;
@@ -68,7 +68,7 @@
     gap: var(--space-md);
   }
   .project-visual-wrapper, .project-info {
-    grid-column: span 12 !important;
+    grid-column: 1 / -1 !important;
     grid-row: auto !important;
   }
   .project-fold.layout-center .project-visual-wrapper,
@@ -82,7 +82,7 @@
     gap: var(--space-md);
   }
   .about-heading-col, .about-content-col {
-    grid-column: span 12;
+    grid-column: 1 / -1 !important;
   }
   
   .skills-grid {
@@ -90,7 +90,7 @@
     gap: var(--space-lg);
   }
   .skills-core-box, .skills-expanding-box {
-    grid-column: span 12;
+    grid-column: 1 / -1 !important;
     border-left: none;
     padding-left: 0;
   }
@@ -118,7 +118,7 @@
     gap: var(--space-lg);
   }
   .contact-statement-panel, .contact-form-panel {
-    grid-column: span 12;
+    grid-column: 1 / -1 !important;
   }
 }
 
