@@ -100,21 +100,31 @@
     padding-left: 0;
   }
 
-  /* Resume banner alignment */
-  .resume-banner-card {
+  /* Resume banner alignment & sheet responsiveness */
+  .resume-header-split {
     flex-direction: column;
-    text-align: center;
-    padding: var(--space-md);
-    gap: var(--space-md);
+    align-items: flex-start;
+    gap: 1.25rem;
   }
-  .resume-actions {
-    justify-content: center;
+  .resume-header-actions {
     width: 100%;
+    justify-content: flex-start;
   }
-  .resume-actions .btn {
+  .resume-header-actions .btn {
     flex: 1;
-    min-width: 200px;
+    min-width: 180px;
     justify-content: center;
+  }
+  .sheet-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .hero-visual {
+    grid-column: 1 / -1 !important;
+    max-width: 480px;
+    width: 100%;
+    margin: 0 auto;
+    height: auto !important;
   }
 
   /* Contact panels stacking */
@@ -240,6 +250,32 @@
     flex-wrap: wrap;
     gap: var(--space-sm);
   }
+
+  /* Resume Sheet 768px Mobile Polish */
+  .resume-sheet {
+    padding: 1.5rem !important;
+  }
+  .sheet-top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .entry-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+  .entry-meta {
+    align-items: flex-start;
+  }
+  .hero-meta-strip {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .hero-meta-divider {
+    display: none;
+  }
 }
 
 /* 4. Compact Mobile Portrait Screens (480px and below) */
@@ -249,7 +285,20 @@
   }
 
   .hero-visual {
-    height: 280px;
+    height: auto !important;
+  }
+  
+  .track-items {
+    grid-template-columns: 1fr !important;
+  }
+
+  .sheet-contact-pills {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .sheet-contact-item {
+    width: 100%;
   }
   
   .browser-body {

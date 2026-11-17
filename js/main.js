@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 4. Active Navigation Highlighting on Scroll (Intersection Observer)
   const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
   const activeNavObserver = () => {
     if (sections.length === 0) return;
 
